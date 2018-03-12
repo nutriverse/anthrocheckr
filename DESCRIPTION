@@ -1,4 +1,4 @@
-Package: standardr
+Package: anthrocheckr
 Type: Package
 Title: An Implementation of Anthropometric Measurement Standardisation Tests in R
 Version: 0.1.0
