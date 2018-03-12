@@ -1,0 +1,15 @@
+Package: standardr
+Type: Package
+Title: An Implementation of Anthropometric Measurement Standardisation Tests in R
+Version: 0.1.0
+Authors@R: person("Ernest", "Guevarra", comment = c(ORCID = "0000-0002-4887-4415"), 
+    email = "ernestgmd@gmail.com", role = c("aut", "cre"))
+Description: Ensuring the precision and accuracy of measurements is critical 
+    when collecting anthropometric data. Anthropometrists are usually tested
+    for precision and accuracy of measurement through standardisation tests
+    performed prior to anthropometric data collection. This package provides
+    functions to calculate inter- and intra-observer technical error of
+    measurement (TEM) to assess precision of measurements.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
