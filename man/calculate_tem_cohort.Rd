@@ -4,25 +4,14 @@
 \alias{calculate_tem_cohort}
 \title{calculate_tem_cohort}
 \usage{
-calculate_tem_cohort(n, k, m)
+calculate_tem_cohort(x, d, n)
 }
 \arguments{
-\item{n}{A numeric value specifying number of subjects}
-
-\item{k}{A numeric value specifying number of observers}
-
-\item{m}{A data frame of of measurements with number of columns equal to
-\code{k} and number of rows equal to \code{n}}
-}
-\value{
-A numeric value of the technical error of measurement (TEM). Unit
-    of TEM is the same as the unit of the measurements compared.
+\item{x}{A data frame in long format containing data on multiple measurements
+made by multiple observers on multiple subjects}
 }
 \description{
-Function to calculate technical error of measurement (TEM) when there are
-more than two observers are involved.
-}
-\examples{
-#
-
+Function to calculate intra-observer TEM for each observer using input
+dataset containing multiple types of multiple measurements from multiple
+observers.
 }

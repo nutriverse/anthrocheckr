@@ -25,9 +25,11 @@ specific for intra-observer TEM for two measurements, and for inter-observer
 TEM involving two measurers.
 }
 \examples{
-# Apply calculate_tem to smartStd dataset to get TEM for supervisor
+# Apply calculate_tem to smartStd dataset to get TEM for weight for supervisor
 difference <- smartStd$weight1[smartStd$observer == 0] - smartStd$weight2[smartStd$observer == 0]
 tem <- calculate_tem(d = difference, n = length(difference))
 tem
+
+# Apply calculate_tem
 
 }

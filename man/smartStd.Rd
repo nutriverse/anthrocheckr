@@ -29,7 +29,7 @@ smartStd
 Example dataset from the Standardized Monitoring and Assessment of Relief
 and Transitions (SMART) capacity building toolbox found at
 <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
-The dataset has been restructured into long format from the original wide
-format.
+The dataset has been restructured into a less wide format compared to the
+original wide format.
 }
 \keyword{datasets}
