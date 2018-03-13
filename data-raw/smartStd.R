@@ -61,9 +61,25 @@ smartStd <- data.frame(subject, observer, y)
 devtools::use_data(smartStd, overwrite = TRUE)
 
 #
-# Convert to long format
+# Convert to long format with first measurements and second measurements on spearate columns
 #
-#smartStd <- gather(data = y, key = "measure_type", value = "measure_value", weight1:muac2)
+xx <- subset(smartStd, select = c(-weight2, -height2, -muac2))
+names(xx) <- c("subject", "observer", "weight", "height", "muac")
+xx <- gather(xx, key = "measure_type", value = "measure_value1", weight:muac)
+
+yy <- subset(smartStd, select = c(-weight1, -height1, -muac1))
+names(yy) <- c("subject", "observer", "weight", "height", "muac")
+yy <- gather(yy, key = "measure_type", value = "measure_value2", weight:muac)
+
+zz <- merge(xx, yy, sort = FALSE)
+
+zz <- gather(zz, key = "measure_round", value = "measure_value", measure_value1:measure_value2)
+
+zz$measure_round <- ifelse(zz$measure_round == "measure_value1", 1, 2)
+
+smartStdLong <- zz
+
+devtools::use_data(smartStdLong, overwrite = TRUE)
 
 
 
