@@ -58,8 +58,8 @@ NULL
 #' Example dataset from the Standardized Monitoring and Assessment of Relief
 #' and Transitions (SMART) capacity building toolbox found at
 #' <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
-#' The dataset has been restructured into long format from the original wide
-#' format.
+#' The dataset has been restructured into a less wide format compared to the
+#' original wide format.
 #'
 #' @format A data frame with 8 columns and 110 rows:
 #' \describe{
@@ -81,3 +81,35 @@ NULL
 #
 ################################################################################
 "smartStd"
+
+
+################################################################################
+#
+#' smartStdLong
+#'
+#' Example dataset from the Standardized Monitoring and Assessment of Relief
+#' and Transitions (SMART) capacity building toolbox found at
+#' <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
+#' This dataset is the same as the \code{smartStd} dataset but has been restructured
+#' into a long format (as per tidyverse specifications) compared to original
+#' format.
+#'
+#' @format A data frame with 5 columns and 660 rows:
+#' \describe{
+#' \item{\code{subject}}{Subject unique identifier}
+#' \item{\code{observer}}{Observer unique identifier}
+#' \item{\code{measure_type}}{Type of measurement. Can be \code{height},
+#'     \code{weight}, or \code{muac}}
+#' \item{\code{measure_round}}{Measurement round. Can be 1 or 2 for first and
+#'     second round of measurement respectively}
+#' \item{\code{measure_value}}{Measurement}
+#' }
+#' @source 1.	Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
+#'     assessment of nutritional status. Br J Nutr. 2007;82: 165–13.
+#'     doi:10.1017/S0007114599001348
+#'
+#
+################################################################################
+"smartStdLong"
+
+
