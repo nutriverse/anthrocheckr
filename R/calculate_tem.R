@@ -8,42 +8,32 @@
 #' specific for intra-observer TEM for two measurements, and for inter-observer
 #' TEM involving two measurers.
 #'
-#' @param m1 Numeric vector for first measurement made (if comparing repeated
-#'     measures) or numeric value for measurement made by first measurer (if
-#'     comparing two measurers).
-#' @param m2 Numeric vector for second measurement made (if comparing repeated
-#'     measures) or numeric value for measurement made by second measurer (if
-#'     comparing two measurers).
 #' @param d Numeric vector of difference between two measurements made by same
 #'     measurer or between two measurers. Not required if \code{m1} and
 #'     \code{m2} are specified.
-#'
 #' @param n Numeric value of number of individuals measured.
 #'
 #' @return A numeric value of the technical error of measurement (TEM). Unit
 #'     of TEM is the same as the unit of the measurements compared.
 #'
 #' @examples
-#' #
+#' # Apply calculate_tem to smartStd dataset to get TEM for weight for supervisor
+#' difference <- smartStd$weight1[smartStd$observer == 0] - smartStd$weight2[smartStd$observer == 0]
+#' tem <- calculate_tem(d = difference, n = length(difference))
+#' tem
+#'
+#' # Apply calculate_tem
+#'
+#' @export
 #'
 #
 ################################################################################
 
-calculate_tem <- function(m1, m2, d = NULL, n) {
+calculate_tem <- function(d, n) {
   #
-  # If d is specified
+  # TEM formula
   #
-  if(!is.null(d)) {
-    tem <- sqrt(sum(d) ^ 2 / 2 * n)
-  }
-  #
-  # Get difference of measures
-  #
-  D <- m1 - m2
-  #
-  # Calculate TEM
-  #
-  tem <- sqrt(sum(D) ^ 2 / 2 * n)
+  tem <- (sqrt(sum(d) ^ 2) / (2 * n))
   #
   # Return output
   #
