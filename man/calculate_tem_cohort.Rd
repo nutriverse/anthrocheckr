@@ -4,14 +4,30 @@
 \alias{calculate_tem_cohort}
 \title{calculate_tem_cohort}
 \usage{
-calculate_tem_cohort(x, d, n)
+calculate_tem_cohort(m1, m2, index, n)
 }
 \arguments{
-\item{x}{A data frame in long format containing data on multiple measurements
-made by multiple observers on multiple subjects}
+\item{m1}{A numeric vector of first round measurements made by multiple
+observers}
+
+\item{m2}{A numeric vector of second round measurements made by multiple
+observers}
+
+\item{index}{A list of grouping factors}
+
+\item{n}{Number of subjects}
+}
+\value{
+A vector or data frame of calculated TEM per observer and per
+    measurement type.
 }
 \description{
 Function to calculate intra-observer TEM for each observer using input
 dataset containing multiple types of multiple measurements from multiple
 observers.
+}
+\examples{
+# Get the TEM per observer for MUAC measurements in the smartStd dataset
+calculate_tem_cohort(m1 = smartStd$muac1, m2 = smartStd$muac2, index = smartStd$observer, n = 10)
+
 }
