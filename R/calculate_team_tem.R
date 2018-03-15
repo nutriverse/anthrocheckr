@@ -3,7 +3,7 @@
 #' calculate_team_tem
 #'
 #' Function to calculate technical error of measurement (TEM) when there are
-#' more than two observers are involved.
+#' more than two observers involved.
 #'
 #' @param n A numeric value specifying number of subjects
 #' @param k A numeric value specifying number of observers
@@ -12,14 +12,16 @@
 #' @return A numeric value of the technical error of measurement (TEM). Unit
 #'     of TEM is the same as the unit of the measurements compared.
 #' @examples
-#' #
+#' # calculate team TEM from stature dataset
+#' calculate_team_tem(n = 10, k = 4, m = stature[ , c("m1", "m2", "m3", "m4")])
+#'
 #'
 #' @export
 #'
 #
 ################################################################################
 
-calculate_team_tem_<- function(n, k, m) {
+calculate_team_tem <- function(n, k, m) {
 
   if(class(m) != "data.frame") {
     stop("Measurements should be supplied as a data frame. Please check and try again.")
