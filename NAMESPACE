@@ -3,3 +3,5 @@
 export(calculate_team_tem)
 export(calculate_tem)
 export(calculate_tem_cohort)
+export(summary_measure)
+importFrom(stats,sd)
