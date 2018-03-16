@@ -33,7 +33,7 @@ calculate_tem <- function(d, n) {
   #
   # TEM formula
   #
-  tem <- (sqrt(sum(d) ^ 2) / (2 * n))
+  tem <- sqrt(sum(d ^ 2) / (2 * n))
   #
   # Return output
   #
