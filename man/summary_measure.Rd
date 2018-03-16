@@ -28,12 +28,18 @@ measurements made by a single observer across multiple subjects
 # variable is the observer column. This can be used to get the summary
 # measure for one measurement type only but can be used to summarise repeat
 # measurements
-
 # Get mean of weight measure taken by each observer at 2 separate occasions
   x <- smartStd[ , c("observer", "weight1")]
   y <- smartStd[ , c("observer", "weight2")]
   names(x) <- names(y) <- c("observer", "weight")
   temp <- data.frame(rbind(x, y))
   mean_measure <- summary_measure(x = temp$weight, index = temp$observer)
+  mean_measure
 
+# Apply summary_measure on smartStdLong dataset that has a row for each subject
+# for each measure type and for each repeat measurement. Get mean, sd and max
+# of height, weight and MUAC in one specification
+  mean_measure <- summary_measure(x = smartStdLong$measure_value,
+                                  index = smartStdLong[ , c("observer", "measure_type")])
+  mean_measure
 }

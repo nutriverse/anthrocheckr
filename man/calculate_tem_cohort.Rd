@@ -28,6 +28,14 @@ observers.
 }
 \examples{
 # Get the TEM per observer for MUAC measurements in the smartStd dataset
-calculate_tem_cohort(m1 = smartStd$muac1, m2 = smartStd$muac2, index = smartStd$observer, n = 10)
+calculate_tem_cohort(m1 = smartStd$muac1, m2 = smartStd$muac2,
+                     index = smartStd$observer, n = 10)
+
+# Get the TEM per observer for all measurement types (height, weight, MUAC)
+# in the smartStdLong dataset
+calculate_tem_cohort(m1 = smartStdLong$measure_value[smartStdLong$measure_round == 1],
+  m2 = smartStdLong$measure_value[smartStdLong$measure_round == 2],
+  index = smartStdLong[smartStdLong$measure_round == 1, c("observer", "measure_type")],
+  n = 10)
 
 }
