@@ -26,4 +26,5 @@ more than two observers involved.
 # calculate team TEM from stature dataset
 calculate_team_tem(n = 10, k = 4, m = stature[ , c("m1", "m2", "m3", "m4")])
 
+
 }

@@ -1,0 +1,50 @@
+---
+title: "Technical Error of Measurement"
+author: "Ernest Guevarra"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Technical Error of Measurement}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Intra-observer TEM for two measurements, and inter-observer TEM involving two measurers
+
+$$ TEM = \sqrt{\frac{\sum D ^ 2}{2N}} $$
+
+## Inter-observer TEM with more than two observers
+
+$$ TEM = \sqrt{\sum\nolimits_1 ^ N \left (\sum\nolimits_1 ^ K  M ^ 2 ~ - ~ \frac{\left (\sum\nolimits_1 ^ K M \right ) ^ 2 / K}{N(K ~ - ~ 1)} \right )}   $$
+
+
+## Relative TEM
+
+$$ \% ~ TEM = \frac{TEM}{mean} \times 100 $$
+
+## Total TEM for two observers and two measurements per observer
+
+$$ \text{Total TEM} = \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2}{2} ~ + ~ TEM \times (inter) ^ 2} $$
+
+## Total TEM for three observers and two measurements per observer
+
+$$ \text{Total TEM} = \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2 ~ + ~ TEM ~ \times ~ (intra_3) ^ 2}{3} ~ + ~ TEM ~ \times ~ inter ^ 2}  $$
+
+## Relative total TEM
+
+$$ \% ~ \text{Total TEM} = \frac{\text{Total TEM}}{mean} \times 100 $$
+
+
+## Coefficient of Reliability (R)
+
+$$ R = 1 - \frac{\text{Total TEM} ^ 2}{SD ^ 2} $$
+
+
+
