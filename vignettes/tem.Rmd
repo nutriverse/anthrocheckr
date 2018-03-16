@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 $$ TEM = \sqrt{\frac{\sum D ^ 2}{2N}} $$
 
+
 ## Inter-observer TEM with more than two observers
 
 $$ TEM = \sqrt{\sum\nolimits_1 ^ N \left (\sum\nolimits_1 ^ K  M ^ 2 ~ - ~ \frac{\left (\sum\nolimits_1 ^ K M \right ) ^ 2 / K}{N(K ~ - ~ 1)} \right )}   $$
