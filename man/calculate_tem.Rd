@@ -8,8 +8,7 @@ calculate_tem(d, n)
 }
 \arguments{
 \item{d}{Numeric vector of difference between two measurements made by same
-measurer or between two measurers. Not required if \code{m1} and
-\code{m2} are specified.}
+measurer or between two measurers.}
 
 \item{n}{Numeric value of number of individuals measured.}
 }
