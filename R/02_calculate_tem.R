@@ -9,8 +9,7 @@
 #' TEM involving two measurers.
 #'
 #' @param d Numeric vector of difference between two measurements made by same
-#'     measurer or between two measurers. Not required if \code{m1} and
-#'     \code{m2} are specified.
+#'     measurer or between two measurers.
 #' @param n Numeric value of number of individuals measured.
 #'
 #' @return A numeric value of the technical error of measurement (TEM). Unit
