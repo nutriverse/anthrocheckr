@@ -18,34 +18,34 @@ knitr::opts_chunk$set(
 
 ## Intra-observer TEM for two measurements, and inter-observer TEM involving two measurers
 
-$$ TEM = \sqrt{\frac{\sum D ^ 2}{2N}} $$
+$$ TEM ~ = ~ \sqrt{\frac{\sum D ^ 2}{2N}} $$
 
 
 ## Inter-observer TEM with more than two observers
 
-$$ TEM = \sqrt{\sum\nolimits_1 ^ N \left (\sum\nolimits_1 ^ K  M ^ 2 ~ - ~ \frac{\left (\sum\nolimits_1 ^ K M \right ) ^ 2 / K}{N(K ~ - ~ 1)} \right )}   $$
+$$ TEM ~ = ~ \sqrt{\sum\nolimits_1 ^ N \left (\sum\nolimits_1 ^ K  M ^ 2 ~ - ~ \frac{\left (\sum\nolimits_1 ^ K M \right ) ^ 2 / K}{N(K ~ - ~ 1)} \right )}   $$
 
 
 ## Relative TEM
 
-$$ \% ~ TEM = \frac{TEM}{mean} \times 100 $$
+$$ \% ~ TEM ~ = ~ \frac{TEM}{mean} ~ \times ~ 100 $$
 
 ## Total TEM for two observers and two measurements per observer
 
-$$ \text{Total TEM} = \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2}{2} ~ + ~ TEM \times (inter) ^ 2} $$
+$$ \text{Total TEM} ~ = ~ \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2}{2} ~ + ~ TEM \times (inter) ^ 2} $$
 
 ## Total TEM for three observers and two measurements per observer
 
-$$ \text{Total TEM} = \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2 ~ + ~ TEM ~ \times ~ (intra_3) ^ 2}{3} ~ + ~ TEM ~ \times ~ inter ^ 2}  $$
+$$ \text{Total TEM} ~ = ~ \sqrt{\frac{TEM ~ \times ~ (intra_1) ^ 2 ~ + ~ TEM ~ \times ~ (intra_2) ^ 2 ~ + ~ TEM ~ \times ~ (intra_3) ^ 2}{3} ~ + ~ TEM ~ \times ~ inter ^ 2}  $$
 
 ## Relative total TEM
 
-$$ \% ~ \text{Total TEM} = \frac{\text{Total TEM}}{mean} \times 100 $$
+$$ \% ~ \text{Total TEM} ~ =  ~ \frac{\text{Total TEM}}{mean} ~ \times ~ 100 $$
 
 
 ## Coefficient of Reliability (R)
 
-$$ R = 1 - \frac{\text{Total TEM} ^ 2}{SD ^ 2} $$
+$$ R ~ = ~ 1 ~ - ~ \frac{\text{Total TEM} ^ 2}{SD ^ 2} $$
 
 
 
