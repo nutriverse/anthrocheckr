@@ -19,11 +19,23 @@ knitr::opts_chunk$set(
 ## Intra-observer TEM for two measurements, and inter-observer TEM involving two measurers
 
 $$ TEM ~ = ~ \sqrt{\frac{\sum D ^ 2}{2N}} $$
+where
+
+$D ~ = ~ \text{The difference between measurements}$
+
+$N ~ = ~ \text{The number of individuals measured}$
 
 
 ## Inter-observer TEM with more than two observers
 
 $$ TEM ~ = ~ \sqrt{\sum\nolimits_1 ^ N \left (\sum\nolimits_1 ^ K  M ^ 2 ~ - ~ \frac{\left (\sum\nolimits_1 ^ K M \right ) ^ 2 / K}{N(K ~ - ~ 1)} \right )}   $$
+where
+
+$N ~ = ~ \text{Number of subjects}$
+
+$K ~ = ~ \text{Number of observers}$
+
+$M ~ = ~ \text{Measurement}$
 
 
 ## Relative TEM
