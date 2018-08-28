@@ -47,11 +47,11 @@ summary_measure <- function(x, index) {
   #
   # Get SD of measurements
   #
-  sm_sd <- tapply(X = x, INDEX = index, FUN = sd, na.rm = FALSE)
+  sm_sd <- tapply(X = x, INDEX = index, FUN = sd, na.rm = TRUE)
   #
   # Get max value of measurements
   #
-  sm_max <- tapply(X = x, INDEX = index, FUN = max, na.rm = FALSE)
+  sm_max <- tapply(X = x, INDEX = index, FUN = max, na.rm = TRUE)
   #
   # If index is a list...
   #
