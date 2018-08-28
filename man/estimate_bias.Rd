@@ -11,7 +11,7 @@ estimate_bias(msur, msup, mall)
 
 \item{msup}{A numeric value or vector of mean measurements from supervisor}
 
-\item{mall}{A numeric value or vector of the median of  measurements from
+\item{mall}{A numeric value or vector of the median of measurements from
 observers}
 }
 \value{
@@ -24,5 +24,10 @@ expert; and, 2) median of all measurements made by the observers.
 }
 \examples{
 #
+  mean_measure <- summary_measure(x = smartStdLong$measure_value,
+                                  index = smartStdLong[ , c("observer", "measure_type")])
+  msupDF <- mean_measure$mean[1, ]
+  msurDF <- mean_measure$mean[2:11, ]
+
 
 }
