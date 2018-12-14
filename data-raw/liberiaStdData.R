@@ -1,10 +1,10 @@
 library(readxl)
 
 round1 <- read_excel(path = "data-raw/stdEntry.xlsx", sheet = 1)
-round1 <- data.frame("round" = 1, round1)
+names(round1) <- c("eid", "cid", "round", "weight", "height", "muac", "oedema")
 
 round2 <- read_excel(path = "data-raw/stdEntry.xlsx", sheet = 2)
-round2 <- data.frame("round" = 2, round2)
+names(round1) <- c("eid", "cid", "round", "weight", "height", "muac", "oedema")
 
 liberiaStdData <- data.frame(rbind(round1, round2))
 
