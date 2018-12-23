@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests in R
+# anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests in R <img src="man/figures/anthrocheckr.png" width="150" align="right" />
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
