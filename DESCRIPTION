@@ -12,11 +12,12 @@ Description: Ensuring the precision and accuracy of measurements is critical
     measurement (TEM) to assess precision of measurements.
 License: MIT + file LICENSE
 Depends: R (>= 2.10)
+Imports:
+    shiny
 Suggests: 
     knitr,
     rmarkdown,
-    tidyr,
-    shiny
+    tidyr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
