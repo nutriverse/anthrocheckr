@@ -52,6 +52,39 @@ server <- function(input, output, session) {
       )
     }
   })
+  ## Create ui for slider inputs
+  output$weightSlider <- renderUI({
+    req("weight" %in% input$anthroChoices)
+    sliderInput(inputId = "nWeight",
+      label = "No. of children measured for weight",
+      min = 5,
+      max = 20,
+      value = 10,
+      step = 1
+    )
+  })
+  ## Create ui for slider inputs (height)
+  output$heightSlider <- renderUI({
+    req("height" %in% input$anthroChoices)
+    sliderInput(inputId = "nHeight",
+      label = "No. of children measured for height",
+      min = 5,
+      max = 20,
+      value = 10,
+      step = 1
+    )
+  })
+  ## Create ui for slider inputs (MUAC)
+  output$muacSlider <- renderUI({
+    req("muac" %in% input$anthroChoices)
+    sliderInput(inputId = "nMUAC",
+      label = "No. of children measured for MUAC",
+      min = 5,
+      max = 20,
+      value = 10,
+      step = 1
+    )
+  })
   ## Read uploaded data for standardisation measurements
   dataStd <- reactive({
     x <- input$stdData
@@ -88,29 +121,35 @@ server <- function(input, output, session) {
   ## Calculate TEM
   temDF <- eventReactive(input$analyseData, {
 
-    weightTEM <- calculate_tem_cohort(
-      m1 = dataStdLong()$measure_value[dataStdLong()$round == 1 & dataStdLong()$measure_type == "weight" & !is.na(dataStdLong()$measure_value)],
-      m2 = dataStdLong()$measure_value[dataStdLong()$round == 2 & dataStdLong()$measure_type == "weight" & !is.na(dataStdLong()$measure_value)],
-      index = dataStdLong()[dataStdLong()$round == 1 & dataStdLong()$measure_type == "weight" & !is.na(dataStdLong()$measure_value),
-                            c("eid", "measure_type")],
-      n = input$nWeight
-    )
-
-    heightTEM <- calculate_tem_cohort(
-      m1 = dataStdLong()$measure_value[dataStdLong()$round == 1 & dataStdLong()$measure_type == "height" & !is.na(dataStdLong()$measure_value)],
-      m2 = dataStdLong()$measure_value[dataStdLong()$round == 2 & dataStdLong()$measure_type == "height" & !is.na(dataStdLong()$measure_value)],
-      index = dataStdLong()[dataStdLong()$round == 1 & dataStdLong()$measure_type == "height" & !is.na(dataStdLong()$measure_value),
-                            c("eid", "measure_type")],
-      n = input$nHeight
-    )
-
-    muacTEM <- calculate_tem_cohort(
-      m1 = dataStdLong()$measure_value[dataStdLong()$round == 1 & dataStdLong()$measure_type == "muac" & !is.na(dataStdLong()$measure_value)],
-      m2 = dataStdLong()$measure_value[dataStdLong()$round == 2 & dataStdLong()$measure_type == "muac" & !is.na(dataStdLong()$measure_value)],
-      index = dataStdLong()[dataStdLong()$round == 1 & dataStdLong()$measure_type == "muac" & !is.na(dataStdLong()$measure_value),
-                            c("eid", "measure_type")],
-      n = input$nMUAC
-    )
+    weightTEM <- rep(NA, input$nEnumerators)
+    
+    if("weight" %in% input$anthroChoices) {
+      weightTEM <- calculate_tem_cohort(
+        m1 = dataStd()$weight.x,
+        m2 = dataStd()$weight.y,
+        index = dataStd()[ , "eid"],
+        n = input$nWeight)
+    }
+    
+    heightTEM <- rep(NA, input$nEnumerators)
+    
+    if("height" %in% input$anthroChoices) {
+      heightTEM <- calculate_tem_cohort(
+        m1 = dataStd()$height.x,
+        m2 = dataStd()$height.y,
+        index = dataStd()[ , "eid"],
+        n = input$nHeight)
+    }
+    
+    muacTEM <- rep(NA, input$nEnumerators)
+    
+    if("muac" %in% input$anthroChoices) {
+      muacTEM <- calculate_tem_cohort(
+        m1 = dataStd()$muac.x,
+        m2 = dataStd()$muac.y,
+        index = dataStd()[ , "eid"],
+        n = input$nMUAC)
+    }
 
     resultsDF <- data.frame(weightTEM, heightTEM, muacTEM)
 
@@ -138,21 +177,73 @@ server <- function(input, output, session) {
   })
   output$temTable <- DT::renderDataTable(
     expr = temDF(),
-    options = list(scrollX = TRUE)
+    options = list(scrollX = TRUE, pageLength = input$nEnumerators)
+  )
+  ## Create UI action button for saving data - TEM
+  output$saveButtonTEM <- renderUI({
+    req(input$analyseData)
+    downloadButton(outputId = "saveDataTEM",
+      label = "Save TEM results",
+      class = "btn btn-inverse btn-primary",
+      icon = icon(name = "download",
+                  lib = "font-awesome",
+                  class = "fa-lg")
+    )
+  })
+  ## Download data
+  output$saveDataTEM <- downloadHandler(
+    filename = function() {
+        paste("tem-", Sys.Date(), ".xlsx", sep = "")
+    },
+    content = function(file) {
+        openxlsx::write.xlsx(x = temDF(), file = file)
+    }
   )
   ##
   accuracyDF <- eventReactive(input$analyseData, {
-    mean_measure <- summary_measure(x = dataStdLong()$measure_value,
-                                    index = dataStdLong()[ , c("eid", "measure_type")])
+    mean_measure_height <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "height"],
+                                           index = dataStdLong()[dataStdLong()$measure_type == "height", c("eid", "cid")])
+    
+    mean_height <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "height"],
+                                   index = dataStdLong()[dataStdLong()$measure_type == "height", c("cid")])
+    
+    biasHeight <- data.frame(matrix(nrow = nrow(mean_measure_height[[1]]), 
+                                    ncol = nrow(mean_height)))
+    
+    for(i in 1:ncol(mean_measure_height[[1]])) {
+      biasHeight[ , i] <- mean_measure_height[[1]][ , i] / mean_height[i, 1]
+    }
+    
+    mean_measure_weight <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "weight"],
+                                           index = dataStdLong()[dataStdLong()$measure_type == "weight" , c("eid", "cid")])
 
-    median_height <- median(dataStdLong()$measure_value[dataStdLong()$measure_type == "height"])
-    median_muac <- median(dataStdLong()$measure_value[dataStdLong()$measure_type == "muac"])
-    median_weight <- median(dataStdLong()$measure_value[dataStdLong()$measure_type == "weight"], na.rm = TRUE)
-
-    biasDF <- data.frame("eid" = 1:31,
-                         "height" = mean_measure[[1]]$height / median_height,
-                         "muac" = mean_measure[[2]]$muac / median_muac,
-                         "weight" = mean_measure[[3]]$weight / median_weight)
+    mean_weight <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "weight"],
+                                   index = dataStdLong()[dataStdLong()$measure_type == "weight", c("cid")])
+    
+    biasWeight <- data.frame(matrix(nrow = nrow(mean_measure_weight[[1]]), 
+                                    ncol = nrow(mean_weight)))
+    
+    for(i in 1:ncol(mean_measure_weight[[1]])) {
+      biasWeight[ , i] <- mean_measure_weight[[1]][ , i] / mean_weight[i, 1]
+    }
+    
+    mean_measure_muac <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "muac"],
+                                         index = dataStdLong()[dataStdLong()$measure_type == "muac" , c("eid", "cid")])
+    
+    mean_muac <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "muac"],
+                                   index = dataStdLong()[dataStdLong()$measure_type == "muac", c("cid")])
+    
+    biasMUAC <- data.frame(matrix(nrow = nrow(mean_measure_muac[[1]]), 
+                                  ncol = nrow(mean_muac)))
+    
+    for(i in 1:ncol(mean_measure_muac[[1]])) {
+      biasMUAC[ , i] <- mean_measure_muac[[1]][ , i] / mean_muac[i, 1]
+    }
+    
+    biasDF <- data.frame("eid" = 1:input$nEnumerators,
+                         "height" = rowMeans(biasHeight, na.rm = TRUE),
+                         "muac" = rowMeans(biasMUAC, na.rm = TRUE),
+                         "weight" = rowMeans(biasWeight, na.rm = TRUE))
 
     height_class_value <- c("Good", "Acceptable", "Poor", "Reject")
     height_class <- height_class_value[findInterval(x = biasDF$height,
@@ -169,7 +260,7 @@ server <- function(input, output, session) {
                                                 vec = c(0, 1, 2, 3),
                                                 rightmost.closed = FALSE)]
 
-    biasClassDF <- data.frame("ID" = 1:31,
+    biasClassDF <- data.frame("ID" = 1:input$nEnumerators,
                               "height_bias" = biasDF$height,
                               height_class,
                               "weight_bias" = biasDF$weight,
@@ -179,6 +270,26 @@ server <- function(input, output, session) {
   })
   output$accuracyTable <- DT::renderDataTable(
     expr = accuracyDF(),
-    options = list(scrollX = TRUE)
+    options = list(scrollX = TRUE, pageLength = input$nEnumerators)
+  )
+  ## Create UI action button for saving data
+  output$saveButtonAccuracy <- renderUI({
+    req(input$analyseData)
+    downloadButton(outputId = "saveDataAccuracy",
+      label = "Save accuracy results",
+      class = "btn btn-inverse btn-primary",
+      icon = icon(name = "download",
+                  lib = "font-awesome",
+                  class = "fa-lg")
+    )
+  })
+  ## Download data - Accuracy
+  output$saveDataAccuracy <- downloadHandler(
+    filename = function() {
+      paste("accuracy-", Sys.Date(), ".xlsx", sep = "")
+    },
+    content = function(file) {
+      openxlsx::write.xlsx(x = accuracyDF(), file = file)
+    }
   )
 }

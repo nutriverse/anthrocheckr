@@ -71,27 +71,17 @@ ui <- dashboardPage(
             solidHeader = TRUE,
             status = "primary",
             width = 4,
-            sliderInput(inputId = "nWeight",
-              label = "No. of children measured for weight",
-              min = 10,
-              max = 20,
-              value = 10,
-              step = 1
+            checkboxGroupInput(inputId = "anthroChoices",
+              label = "Choose measurements to check",
+              choices = c("Weight" = "weight",
+                          "Height" = "height",
+                          "MUAC" = "muac"),
+              selected = c("height", "weight", "muac"),
+              inline = TRUE
             ),
-            sliderInput(inputId = "nHeight",
-              label = "No. of children measured for height",
-              min = 10,
-              max = 20,
-              value = 10,
-              step = 1
-            ),
-            sliderInput(inputId = "nMUAC",
-              label = "No. of children measured for MUAC",
-              min = 10,
-              max = 20,
-              value = 10,
-              step = 1
-            ),
+            uiOutput("weightSlider"),
+            uiOutput("heightSlider"),
+            uiOutput("muacSlider"),
             sliderInput(inputId = "nEnumerators",
               label = "No. of enumerators who took test",
               min = 10,
@@ -119,13 +109,15 @@ ui <- dashboardPage(
             solidHeader = TRUE,
             status = "primary",
             width = 12,
-            DT::dataTableOutput("temTable")
+            DT::dataTableOutput("temTable"),
+            uiOutput("saveButtonTEM")
           ),
           box(title = "Accuracy",
             solidHeader = TRUE,
             status = "primary",
             width = 12,
-            DT::dataTableOutput("accuracyTable")
+            DT::dataTableOutput("accuracyTable"),
+            uiOutput("saveButtonAccuracy")
           )
         )
       )
