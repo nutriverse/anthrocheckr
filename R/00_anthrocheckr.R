@@ -12,6 +12,7 @@
 #' @docType package
 #' @name anthrocheckr
 #' @importFrom stats sd
+#' @importFrom shiny runApp
 #'
 #
 ################################################################################
