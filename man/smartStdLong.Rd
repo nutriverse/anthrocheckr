@@ -4,7 +4,8 @@
 \name{smartStdLong}
 \alias{smartStdLong}
 \title{smartStdLong}
-\format{A data frame with 5 columns and 660 rows:
+\format{
+A data frame with 5 columns and 660 rows:
 \describe{
 \item{\code{subject}}{Subject unique identifier}
 \item{\code{observer}}{Observer unique identifier}
@@ -13,7 +14,8 @@
 \item{\code{measure_round}}{Measurement round. Can be 1 or 2 for first and
     second round of measurement respectively}
 \item{\code{measure_value}}{Measurement}
-}}
+}
+}
 \source{
 1.	Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
     assessment of nutritional status. Br J Nutr. 2007;82: 165–13.

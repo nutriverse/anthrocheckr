@@ -4,7 +4,8 @@
 \name{stature}
 \alias{stature}
 \title{stature}
-\format{A data frame with 8 columns and 10 rows:
+\format{
+A data frame with 8 columns and 10 rows:
 \describe{
 \item{\code{subject}}{Subject unique identification number}
 \item{\code{m1}}{Stature measurements of first observer}
@@ -14,7 +15,8 @@
 \item{\code{f1}}{Results of the first function in the group TEM equation}
 \item{\code{f2}}{Results of the second function in the group TEM equation}
 \item{\code{diff}}{Difference between \code{f2} and \code{f2} (\code{f2} - \code{f1})}
-}}
+}
+}
 \source{
 1.	Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
     assessment of nutritional status. Br J Nutr. 2007;82: 165–13.

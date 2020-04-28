@@ -4,7 +4,8 @@
 \name{liberiaStdData}
 \alias{liberiaStdData}
 \title{liberiaStdData}
-\format{A data frame with 7 columns and 744 rows:
+\format{
+A data frame with 7 columns and 744 rows:
 \describe{
 \item{\code{eid}}{Enumerator ID}
 \item{\code{cid}}{Child ID}
@@ -13,7 +14,8 @@
 \item{\code{height}}{Height measurement}
 \item{\code{muac}}{Mid-upper arm circumference measurement}
 \item{\code{oedema}}{Bilateral pitting oedema}
-}}
+}
+}
 \usage{
 liberiaStdData
 }

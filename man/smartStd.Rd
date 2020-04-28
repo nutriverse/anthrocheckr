@@ -4,7 +4,8 @@
 \name{smartStd}
 \alias{smartStd}
 \title{smartStd}
-\format{A data frame with 8 columns and 110 rows:
+\format{
+A data frame with 8 columns and 110 rows:
 \describe{
 \item{\code{subject}}{Unique identifier of subjects who were measured}
 \item{\code{observer}}{Unique identifier for those who performed the measurements.
@@ -16,7 +17,8 @@
 \item{\code{height2}}{Second height measurement. Units in centimetres}
 \item{\code{muac1}}{First mid-upper arm circumference measurement. Units in millimetres}
 \item{\code{muac2}}{Second mid-upper arm circumference measurement. Units in millimetres}
-}}
+}
+}
 \source{
 Standardized Monitoring and Assessment of Relief and Transitions
     (SMART) capacity building toolbox found at
