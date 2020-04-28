@@ -10,13 +10,14 @@
 #' assess precision of measurements.
 #'
 #' @docType package
+#' @keywords internal
 #' @name anthrocheckr
 #' @importFrom stats sd
 #' @importFrom shiny runApp
 #'
 #
 ################################################################################
-NULL
+"_PACKAGE"
 
 
 
