@@ -2,7 +2,9 @@
 % Please edit documentation in R/08_estimate_bias.R
 \name{estimate_bias}
 \alias{estimate_bias}
-\title{estimate_bias}
+\title{Calculate the bias of a measurement against a gold standard. Two gold standards
+are used in this function: 1) measurements made by a supervisor or a known
+expert; and, 2) median of all measurements made by the observers.}
 \usage{
 estimate_bias(msur, msup, mall)
 }

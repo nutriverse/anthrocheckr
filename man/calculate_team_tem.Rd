@@ -2,7 +2,8 @@
 % Please edit documentation in R/04_calculate_team_tem.R
 \name{calculate_team_tem}
 \alias{calculate_team_tem}
-\title{calculate_team_tem}
+\title{Function to calculate technical error of measurement (TEM) when there are
+more than two observers involved.}
 \usage{
 calculate_team_tem(n, k, m)
 }

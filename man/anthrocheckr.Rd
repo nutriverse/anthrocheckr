@@ -4,18 +4,26 @@
 \name{anthrocheckr}
 \alias{anthrocheckr}
 \alias{anthrocheckr-package}
-\title{anthrocheckr}
-\description{
-Ensuring the precision and accuracy of measurements is critical when
+\title{Ensuring the precision and accuracy of measurements is critical when
 collecting anthropometric data. Anthropometrists are usually tested for
 precision and accuracy of measurement through standardisation tests performed
 prior to anthropometric data collection. This package provides functions to
 calculate inter- and intra-observer technical error of measurement (TEM) to
-assess precision of measurements.
+assess precision of measurements.}
+\description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
+Ensuring the precision and accuracy of measurements is critical 
+    when collecting anthropometric data. Anthropometrists are usually tested
+    for precision and accuracy of measurement through standardisation tests
+    performed prior to anthropometric data collection. This package provides
+    functions to calculate inter- and intra-observer technical error of
+    measurement (TEM) to assess precision of measurements.
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://nutriverse.io/anthrocheckr/}
   \item \url{https://github.com/nutriverse/anthrocheckr}
   \item Report bugs at \url{https://github.com/nutriverse/anthrocheckr/issues}
 }

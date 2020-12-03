@@ -2,7 +2,11 @@
 % Please edit documentation in R/02_calculate_tem.R
 \name{calculate_tem}
 \alias{calculate_tem}
-\title{calculate_tem}
+\title{Function to calculate technical error of measurement (TEM) based on formula
+created by Ulijaszek and Kerr (1999) as an indicator of measurement
+precision as described by Mueller and Mortorell (1998). This function is
+specific for intra-observer TEM for two measurements, and for inter-observer
+TEM involving two measurers.}
 \usage{
 calculate_tem(d, n)
 }
