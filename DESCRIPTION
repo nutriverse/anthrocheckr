@@ -23,7 +23,8 @@ Suggests:
     tidyr,
     readxl,
     openxlsx,
-    shinydashboard
+    shinydashboard,
+    spelling
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
