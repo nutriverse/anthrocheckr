@@ -1,0 +1,38 @@
+title: anthrocheckr
+
+url: https://nutriverse.io/anthrocheckr
+
+template:
+  params:
+    bootswatch: yeti
+    ganalytics:
+
+navbar:
+  type: inverse
+
+reference:
+  - title: Description
+    contents:
+    - anthrocheckr
+
+  - title: Calculate
+    contents:
+    - summary_measure
+    - calculate_coeff_r
+    - calculate_relative_tem
+    - calculate_team_tem
+    - calculate_tem
+    - calculate_tem_cohort
+    - calculate_total_tem
+    - estimate_bias
+
+  - title: Shiny app
+    contents:
+    - run_anthrocheckr
+
+  - title: Datasets
+    contents:
+    - smartStd
+    - smartStdLong
+    - stature
+    - liberiaStdData
