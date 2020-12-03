@@ -10,7 +10,7 @@ Description: Ensuring the precision and accuracy of measurements is critical
     performed prior to anthropometric data collection. This package provides
     functions to calculate inter- and intra-observer technical error of
     measurement (TEM) to assess precision of measurements.
-License: MIT + file LICENSE
+License: GPL-3
 Depends: R (>= 2.10)
 Imports:
     shiny
