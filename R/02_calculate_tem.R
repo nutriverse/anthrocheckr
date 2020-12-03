@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' calculate_tem
 #'
 #' Function to calculate technical error of measurement (TEM) based on formula
 #' created by Ulijaszek and Kerr (1999) as an indicator of measurement
@@ -29,12 +28,9 @@
 ################################################################################
 
 calculate_tem <- function(d, n) {
-  #
-  # TEM formula
-  #
+  ## TEM formula
   tem <- sqrt(sum(d ^ 2) / (2 * n))
-  #
-  # Return output
-  #
+
+  ## Return output
   return(tem)
 }

@@ -1,6 +1,6 @@
 ################################################################################
 #
-#' run_anthrocheckr
+#' Run the anthrocheckr Shiny app
 #'
 #' @return NULL
 #' @examples

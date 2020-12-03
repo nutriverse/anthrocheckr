@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' calculate_tem_cohort
 #'
 #' Function to calculate intra-observer TEM for each observer using input
 #' dataset containing multiple types of multiple measurements from multiple
@@ -12,6 +11,7 @@
 #'     observers
 #' @param index A list of grouping factors
 #' @param n Number of subjects
+#'
 #' @return A vector or data frame of calculated TEM per observer and per
 #'     measurement type.
 #'
@@ -33,24 +33,19 @@
 ################################################################################
 
 calculate_tem_cohort <- function(m1, m2, index, n) {
-  #
-  # Check that m1 is a numeric vector
-  #
+  ## Check that m1 is a numeric vector
   if(class(m1) == "character" | class(m1) == "factor") {
     stop("m1 must be numeric. Try again.")
   }
-  #
-  # Check that m2 is a numeric vector
-  #
+
+  ## Check that m2 is a numeric vector
   if(class(m2) == "character" | class(m2) == "factor") {
     stop("m2 must be numeric. Try again.")
   }
-  #
-  # get TEM
-  #
+
+  ## get TEM
   tem <- tapply(X = m1 - m2, INDEX = index, FUN = calculate_tem, n = n)
-  #
-  # return output
-  #
+
+  #return output
   return(tem)
 }

@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' calculate_team_tem
 #'
 #' Function to calculate technical error of measurement (TEM) when there are
 #' more than two observers involved.
@@ -30,24 +29,19 @@ calculate_team_tem <- function(n, k, m) {
   if(ncol(m) != k | nrow(m) != n) {
     stop("Measurements data frame should have rows equal to number of subjects and columns equal to number of observers. Please check and try again.")
   }
-  #
-  # Function to square a value
-  #
+
+  ## Function to square a value
   fun_squared <- function(x) { x ^ 2 }
-  #
-  # Square of all measurements and sum per subject measurement squares
-  #
+
+  ## Square of all measurements and sum per subject measurement squares
   firstPart <- rowSums(sapply(m, FUN = fun_squared))
-  #
-  # Sum per subject measurements and then squared divided by number of observers
-  #
+
+  ## Sum per subject measurements and then squared divided by number of observers
   secondPart <- (rowSums(m) ^ 2) / k
-  #
-  # Calculate TEM
-  #
+
+  ## Calculate TEM
   tem <- sqrt(sum(firstPart - secondPart) / (n * (k - 1)))
-  #
-  # Return output
-  #
+
+  ## Return output
   return(tem)
 }

@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' calculate_coeff_r
 #'
 #' Calculate the coefficient of reliability (R).
 #'

@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' estimate_bias
 #'
 #' Calculate the bias of a measurement against a gold standard. Two gold standards
 #' are used in this function: 1) measurements made by a supervisor or a known
@@ -27,20 +26,15 @@
 ################################################################################
 
 estimate_bias <- function(msur, msup, mall) {
-  #
-  # Bias from supervisor
-  #
+  ## Bias from supervisor
   bias_super <- msur - msup
-  #
-  # Bias from median
-  #
+
+  ## Bias from median
   bias_med <- msur - mall
-  #
-  # Concatenate into a data frame
-  #
+
+  ## Concatenate into a data frame
   bias <- data.frame(bias_super, bias_med)
-  #
-  # Return output
-  #
+
+  ## Return output
   return(bias)
 }

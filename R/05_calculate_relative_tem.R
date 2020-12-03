@@ -1,6 +1,5 @@
 ################################################################################
 #
-#' calculate_relative_tem
 #'
 #' Calculate relative TEM of measurements by multiple observers.
 #'
@@ -37,13 +36,10 @@
 ################################################################################
 
 calculate_relative_tem <- function(tem, mean_value) {
-  #
-  # Calculate relative TEM
-  #
+  ## Calculate relative TEM
   relative_tem <- tem / mean_value * 100
-  #
-  # Return output
-  #
+
+  ## Return output
   return(relative_tem)
 }
 
