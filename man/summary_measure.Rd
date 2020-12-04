@@ -38,9 +38,9 @@ measurements made by a single observer across multiple subjects
   mean_measure <- summary_measure(x = temp$weight, index = temp$observer)
   mean_measure
 
-# Apply summary_measure on smartStdLong dataset that has a row for each subject
-# for each measure type and for each repeat measurement. Get mean, sd and max
-# of height, weight and MUAC in one specification
+# Apply summary_measure on smartStdLong dataset that has a row for each
+# subject for each measure type and for each repeat measurement. Get mean,
+# sd and max of height, weight and MUAC in one specification
 summary_measure(x = smartStdLong$measure_value,
                 index = smartStdLong[ , c("observer", "measure_type")])
 

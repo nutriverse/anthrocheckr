@@ -28,9 +28,9 @@
 #'   mean_measure <- summary_measure(x = temp$weight, index = temp$observer)
 #'   mean_measure
 #'
-#' # Apply summary_measure on smartStdLong dataset that has a row for each subject
-#' # for each measure type and for each repeat measurement. Get mean, sd and max
-#' # of height, weight and MUAC in one specification
+#' # Apply summary_measure on smartStdLong dataset that has a row for each
+#' # subject for each measure type and for each repeat measurement. Get mean,
+#' # sd and max of height, weight and MUAC in one specification
 #' summary_measure(x = smartStdLong$measure_value,
 #'                 index = smartStdLong[ , c("observer", "measure_type")])
 #'
@@ -50,7 +50,7 @@ summary_measure <- function(x, index) {
   sm_max <- tapply(X = x, INDEX = index, FUN = max, na.rm = TRUE)
 
   ## If index is a list...
-  if(is.list(index)) {
+  if (is.list(index)) {
     sm <- list(data.frame(sm_mean), data.frame(sm_sd), data.frame(sm_max))
     names(sm) <- c("mean", "sd", "max")
   } else {
