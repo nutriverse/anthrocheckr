@@ -2,9 +2,7 @@
 % Please edit documentation in R/03_calculate_tem_cohort.R
 \name{calculate_tem_cohort}
 \alias{calculate_tem_cohort}
-\title{Function to calculate intra-observer TEM for each observer using input
-dataset containing multiple types of multiple measurements from multiple
-observers.}
+\title{Calculate intra-observer TEM for each observer}
 \usage{
 calculate_tem_cohort(m1, m2, index, n)
 }
@@ -35,9 +33,11 @@ calculate_tem_cohort(m1 = smartStd$muac1, m2 = smartStd$muac2,
 
 # Get the TEM per observer for all measurement types (height, weight, MUAC)
 # in the smartStdLong dataset
-calculate_tem_cohort(m1 = smartStdLong$measure_value[smartStdLong$measure_round == 1],
-  m2 = smartStdLong$measure_value[smartStdLong$measure_round == 2],
-  index = smartStdLong[smartStdLong$measure_round == 1, c("observer", "measure_type")],
+x <- smartStdLong[smartStdLong$measure_round == 1, ]
+y <- smartStdLong[smartStdLong$measure_round == 2, ]
+
+calculate_tem_cohort(m1 = x$measure_value, m2 = x$measure_value,
+  index = x[ , c("observer", "measure_type")],
   n = 10)
 
 }

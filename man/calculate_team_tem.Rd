@@ -2,8 +2,7 @@
 % Please edit documentation in R/04_calculate_team_tem.R
 \name{calculate_team_tem}
 \alias{calculate_team_tem}
-\title{Function to calculate technical error of measurement (TEM) when there are
-more than two observers involved.}
+\title{Calculate technical error of measurement (TEM) for two or more observers}
 \usage{
 calculate_team_tem(n, k, m)
 }
@@ -13,7 +12,7 @@ calculate_team_tem(n, k, m)
 \item{k}{A numeric value specifying number of observers}
 
 \item{m}{A data frame of of measurements with number of columns equal to
-\code{k} and number of rows equal to \code{n}}
+`k` and number of rows equal to `n`}
 }
 \value{
 A numeric value of the technical error of measurement (TEM). Unit
@@ -26,6 +25,5 @@ more than two observers involved.
 \examples{
 # calculate team TEM from stature dataset
 calculate_team_tem(n = 10, k = 4, m = stature[ , c("m1", "m2", "m3", "m4")])
-
 
 }

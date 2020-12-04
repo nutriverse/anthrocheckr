@@ -10,6 +10,6 @@ run_anthrocheckr()
 Run the anthrocheckr Shiny app
 }
 \examples{
-#
+if (interactive()) run_anthrocheckr()
 
 }

@@ -2,9 +2,7 @@
 % Please edit documentation in R/08_estimate_bias.R
 \name{estimate_bias}
 \alias{estimate_bias}
-\title{Calculate the bias of a measurement against a gold standard. Two gold standards
-are used in this function: 1) measurements made by a supervisor or a known
-expert; and, 2) median of all measurements made by the observers.}
+\title{Calculate bias of a measurement}
 \usage{
 estimate_bias(msur, msup, mall)
 }
@@ -20,16 +18,15 @@ observers}
 A numeric value or vector signifying bias
 }
 \description{
-Calculate the bias of a measurement against a gold standard. Two gold standards
-are used in this function: 1) measurements made by a supervisor or a known
-expert; and, 2) median of all measurements made by the observers.
+Calculate the bias of a measurement against a gold standard. Two gold
+standards are used in this function: 1) measurements made by a supervisor or
+a known expert; and, 2) median of all measurements made by the observers.
 }
 \examples{
-#
-  mean_measure <- summary_measure(x = smartStdLong$measure_value,
-                                  index = smartStdLong[ , c("observer", "measure_type")])
-  msupDF <- mean_measure$mean[1, ]
-  msurDF <- mean_measure$mean[2:11, ]
+  x <- summary_measure(x = smartStdLong$measure_value,
+                       index = smartStdLong[ , c("observer", "measure_type")])
+  msupDF <- x$mean[1, ]
+  msurDF <- x$mean[2:11, ]
 
 
 }
