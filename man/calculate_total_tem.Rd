@@ -2,7 +2,7 @@
 % Please edit documentation in R/06_calculate_total_tem.R
 \name{calculate_total_tem}
 \alias{calculate_total_tem}
-\title{calculate_total_tem}
+\title{Calculate the Total TEM given individual intra-observer TEM.}
 \usage{
 calculate_total_tem(intra, inter)
 }

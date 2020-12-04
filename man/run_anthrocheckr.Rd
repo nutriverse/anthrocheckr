@@ -2,12 +2,12 @@
 % Please edit documentation in R/10_runApp.R
 \name{run_anthrocheckr}
 \alias{run_anthrocheckr}
-\title{run_anthrocheckr}
+\title{Run the anthrocheckr Shiny app}
 \usage{
 run_anthrocheckr()
 }
 \description{
-run_anthrocheckr
+Run the anthrocheckr Shiny app
 }
 \examples{
 #

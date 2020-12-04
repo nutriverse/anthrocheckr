@@ -2,7 +2,7 @@
 % Please edit documentation in R/05_calculate_relative_tem.R
 \name{calculate_relative_tem}
 \alias{calculate_relative_tem}
-\title{calculate_relative_tem}
+\title{Calculate relative TEM of measurements by multiple observers.}
 \usage{
 calculate_relative_tem(tem, mean_value)
 }

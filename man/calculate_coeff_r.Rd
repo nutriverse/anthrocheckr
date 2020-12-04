@@ -2,7 +2,7 @@
 % Please edit documentation in R/07_calculate_coeff_r.R
 \name{calculate_coeff_r}
 \alias{calculate_coeff_r}
-\title{calculate_coeff_r}
+\title{Calculate the coefficient of reliability (R).}
 \usage{
 calculate_coeff_r(total_tem, sd)
 }

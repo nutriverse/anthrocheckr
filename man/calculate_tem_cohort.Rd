@@ -2,7 +2,9 @@
 % Please edit documentation in R/03_calculate_tem_cohort.R
 \name{calculate_tem_cohort}
 \alias{calculate_tem_cohort}
-\title{calculate_tem_cohort}
+\title{Function to calculate intra-observer TEM for each observer using input
+dataset containing multiple types of multiple measurements from multiple
+observers.}
 \usage{
 calculate_tem_cohort(m1, m2, index, n)
 }
