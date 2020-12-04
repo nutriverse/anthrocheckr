@@ -24,7 +24,9 @@ Suggests:
     readxl,
     openxlsx,
     shinydashboard,
-    spelling
+    spelling,
+    testthat,
+    dplyr
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
