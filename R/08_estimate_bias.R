@@ -1,9 +1,11 @@
 ################################################################################
 #
 #'
-#' Calculate the bias of a measurement against a gold standard. Two gold standards
-#' are used in this function: 1) measurements made by a supervisor or a known
-#' expert; and, 2) median of all measurements made by the observers.
+#' Calculate bias of a measurement
+#'
+#' Calculate the bias of a measurement against a gold standard. Two gold
+#' standards are used in this function: 1) measurements made by a supervisor or
+#' a known expert; and, 2) median of all measurements made by the observers.
 #'
 #' @param msur A numeric value or vector of mean measurements from observers
 #' @param msup A numeric value or vector of mean measurements from supervisor
@@ -13,11 +15,10 @@
 #' @return A numeric value or vector signifying bias
 #'
 #' @examples
-#' #
-#'   mean_measure <- summary_measure(x = smartStdLong$measure_value,
-#'                                   index = smartStdLong[ , c("observer", "measure_type")])
-#'   msupDF <- mean_measure$mean[1, ]
-#'   msurDF <- mean_measure$mean[2:11, ]
+#'   x <- summary_measure(x = smartStdLong$measure_value,
+#'                        index = smartStdLong[ , c("observer", "measure_type")])
+#'   msupDF <- x$mean[1, ]
+#'   msurDF <- x$mean[2:11, ]
 #'
 #'
 #' @export

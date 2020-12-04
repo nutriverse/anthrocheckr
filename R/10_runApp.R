@@ -3,8 +3,9 @@
 #' Run the anthrocheckr Shiny app
 #'
 #' @return NULL
+#'
 #' @examples
-#' #
+#' if (interactive()) run_anthrocheckr()
 #'
 #' @export
 #'

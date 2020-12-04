@@ -1,6 +1,8 @@
 ################################################################################
 #
 #'
+#' Calculate intra-observer TEM for each observer
+#'
 #' Function to calculate intra-observer TEM for each observer using input
 #' dataset containing multiple types of multiple measurements from multiple
 #' observers.
@@ -22,9 +24,11 @@
 #'
 #' # Get the TEM per observer for all measurement types (height, weight, MUAC)
 #' # in the smartStdLong dataset
-#' calculate_tem_cohort(m1 = smartStdLong$measure_value[smartStdLong$measure_round == 1],
-#'   m2 = smartStdLong$measure_value[smartStdLong$measure_round == 2],
-#'   index = smartStdLong[smartStdLong$measure_round == 1, c("observer", "measure_type")],
+#' x <- smartStdLong[smartStdLong$measure_round == 1, ]
+#' y <- smartStdLong[smartStdLong$measure_round == 2, ]
+#'
+#' calculate_tem_cohort(m1 = x$measure_value, m2 = x$measure_value,
+#'   index = x[ , c("observer", "measure_type")],
 #'   n = 10)
 #'
 #' @export
