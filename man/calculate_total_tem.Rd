@@ -19,9 +19,10 @@ Calculate the Total TEM given individual intra-observer TEM.
 }
 \examples{
 # Calculate intra-observer TEM
-intra <- calculate_tem_cohort(m1 = smartStd$muac1,
-                              m2 = smartStd$muac2,
-                              index = smartStd$observer,
+intra <- calculate_tem_cohort(df = smartStd,
+                              m1 = "muac1",
+                              m2 = "muac2",
+                              index = "observer",
                               n = 11)
 
 # Get inter-observer TEM

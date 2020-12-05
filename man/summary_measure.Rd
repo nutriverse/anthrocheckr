@@ -3,25 +3,33 @@
 \name{summary_measure}
 \alias{summary_measure}
 \title{Get the mean, standard deviation and maximum value of the observations/
-measurements made by a single observer across multiple subjects}
+measurements made by an observer across multiple subjects}
 \usage{
-summary_measure(x, index)
+summary_measure(df, measures, index = NULL)
 }
 \arguments{
-\item{x}{A numeric vector of measurements made by multiple observers on
-multiple subjects.}
+\item{df}{A data.frame containing observations/measurements made by
+a single observer or multiple observers across multiple subjects}
 
-\item{index}{A list of factors to be used to group the summary results into.
-If multiple observers, then this list should include at least the
-observer identifiers. Any other grouping factor should then be added to
-the list.}
+\item{measures}{A character value specifying the variable name in `df`
+containing vector of measurements made by an observer or multiple
+observers on multiple subjects.}
+
+\item{index}{A character value or vector specifying the variable name/s in
+`df` containing the list of factors to be used to group the summary results
+into. If multiple observers, at least two variable  names should be
+provided as observer identifiers. Any other variable in `df` that should
+be used as grouping factor should be included. This is *optional* and is
+set to NULL by default. This would indicate that the summary metrics
+will be made for the values in `measures` without any grouping.}
 }
 \value{
-A numeric vector or data frame with calculated summary measures.
+A data frame containing calculated summary metrics of the
+  specified `measures` grouped by specified `index`.
 }
 \description{
 Get the mean, standard deviation and maximum value of the observations/
-measurements made by a single observer across multiple subjects
+measurements made by an observer across multiple subjects
 }
 \examples{
 # Apply summary_measure on smartStd dataset that has a row for each subject
@@ -35,13 +43,16 @@ measurements made by a single observer across multiple subjects
   y <- smartStd[ , c("observer", "weight2")]
   names(x) <- names(y) <- c("observer", "weight")
   temp <- data.frame(rbind(x, y))
-  mean_measure <- summary_measure(x = temp$weight, index = temp$observer)
+  mean_measure <- summary_measure(df = temp,
+                                  measures = "weight",
+                                  index = "observer")
   mean_measure
 
 # Apply summary_measure on smartStdLong dataset that has a row for each
 # subject for each measure type and for each repeat measurement. Get mean,
 # sd and max of height, weight and MUAC in one specification
-summary_measure(x = smartStdLong$measure_value,
-                index = smartStdLong[ , c("observer", "measure_type")])
+summary_measure(df = smartStdLong,
+                measures = "measure_value",
+                index = c("observer", "measure_type"))
 
 }
