@@ -53,6 +53,10 @@ calculate_tem_cohort <- function(df, m1, m2, index = NULL, n) {
                 FUN = calculate_tem,
                 n = n)
 
+  ## Create data.frame
+  tem <- as.data.frame.table(tem)
+  names(tem) <- c(index, "tem")
+
   #return output
   return(tem)
 }
