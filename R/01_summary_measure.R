@@ -2,10 +2,13 @@
 #
 #'
 #' Get the mean, standard deviation and maximum value of the observations/
-#' measurements made by a single observer across multiple subjects
+#' measurements made by an observer across multiple subjects
 #'
-#' @param x A numeric vector of measurements made by multiple observers on
-#'     multiple subjects.
+#' @param df A data.frame containing observations/measurements made by
+#'   a single observer or multiple observers across multiple subjects
+#' @param measure A character value specifying the variable name in `df`
+#'   containing vector of measurements made by an observer or multiple
+#'   observers on multiple subjects.
 #' @param index A list of factors to be used to group the summary results into.
 #'     If multiple observers, then this list should include at least the
 #'     observer identifiers. Any other grouping factor should then be added to
