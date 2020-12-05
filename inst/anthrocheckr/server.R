@@ -20,38 +20,6 @@
 # Define server logic for application
 #
 server <- function(input, output, session) {
-  output$descriptionImam <- renderUI({
-    if("sam" %in% input$designIndicators) {
-      withMathJax(
-        HTML("
-          <h4>SAM treatment coverage</h4>
-          <p>SAM treatment coverage usually pertains to coverage of SAM treatment. SAM treatment coverage has two indicators:</p>
-          <ul>
-            <li>Case-finding effectiveness</li>
-            $$\\begin{aligned}
-            \\text{Case-finding effectiveness} & ~ = ~ \\frac{C_{in}}{C_{in} ~ + ~ C_{out}} \\\\
-            \\\\
-            where: & \\\\
-            \\\\
-            C_{in} & ~ = ~ \\text{current SAM cases in the programme} \\\\
-            C_{out} & ~ = ~ \\text{current SAM cases out of the programme}
-            \\end{aligned}$$
-            <br/>
-            <li>Treatment coverage</li>
-            $$\\begin{aligned}
-            \\text{Treatment coverage} & ~ = ~ \\frac{C_{in} ~ + ~ R_{in}}{C_{in} ~ + ~ R_{in} ~ + ~ C_{out} ~ + ~ R_{out}} \\\\
-            \\\\
-            where: & \\\\
-            \\\\
-            R_{in} & ~ = ~ \\text{Recovering SAM cases in the programme} \\\\
-            R_{out} & ~ = ~ \\text{Recovering SAM cases not in the programme}
-            \\end{aligned}$$
-          </ul>
-          <br/>
-        ")
-      )
-    }
-  })
   ## Create ui for slider inputs
   output$weightSlider <- renderUI({
     req("weight" %in% input$anthroChoices)
@@ -122,7 +90,7 @@ server <- function(input, output, session) {
   temDF <- eventReactive(input$analyseData, {
 
     weightTEM <- rep(NA, input$nEnumerators)
-    
+
     if("weight" %in% input$anthroChoices) {
       weightTEM <- calculate_tem_cohort(
         m1 = dataStd()$weight.x,
@@ -130,9 +98,9 @@ server <- function(input, output, session) {
         index = dataStd()[ , "eid"],
         n = input$nWeight)
     }
-    
+
     heightTEM <- rep(NA, input$nEnumerators)
-    
+
     if("height" %in% input$anthroChoices) {
       heightTEM <- calculate_tem_cohort(
         m1 = dataStd()$height.x,
@@ -140,9 +108,9 @@ server <- function(input, output, session) {
         index = dataStd()[ , "eid"],
         n = input$nHeight)
     }
-    
+
     muacTEM <- rep(NA, input$nEnumerators)
-    
+
     if("muac" %in% input$anthroChoices) {
       muacTEM <- calculate_tem_cohort(
         m1 = dataStd()$muac.x,
@@ -201,45 +169,39 @@ server <- function(input, output, session) {
   )
   ##
   accuracyDF <- eventReactive(input$analyseData, {
-    mean_measure_height <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "height"],
-                                           index = dataStdLong()[dataStdLong()$measure_type == "height", c("eid", "cid")])
-    
-    mean_height <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "height"],
-                                   index = dataStdLong()[dataStdLong()$measure_type == "height", c("cid")])
-    
-    biasHeight <- data.frame(matrix(nrow = nrow(mean_measure_height[[1]]), 
-                                    ncol = nrow(mean_height)))
-    
-    for(i in 1:ncol(mean_measure_height[[1]])) {
-      biasHeight[ , i] <- mean_measure_height[[1]][ , i] / mean_height[i, 1]
-    }
-    
-    mean_measure_weight <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "weight"],
-                                           index = dataStdLong()[dataStdLong()$measure_type == "weight" , c("eid", "cid")])
+    mean_measure_height <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "height", ],
+                                           measures = "measure_value",
+                                           index = c("eid", "cid"))
 
-    mean_weight <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "weight"],
-                                   index = dataStdLong()[dataStdLong()$measure_type == "weight", c("cid")])
-    
-    biasWeight <- data.frame(matrix(nrow = nrow(mean_measure_weight[[1]]), 
-                                    ncol = nrow(mean_weight)))
-    
-    for(i in 1:ncol(mean_measure_weight[[1]])) {
-      biasWeight[ , i] <- mean_measure_weight[[1]][ , i] / mean_weight[i, 1]
-    }
-    
-    mean_measure_muac <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "muac"],
-                                         index = dataStdLong()[dataStdLong()$measure_type == "muac" , c("eid", "cid")])
-    
-    mean_muac <- summary_measure(x = dataStdLong()$measure_value[dataStdLong()$measure_type == "muac"],
-                                   index = dataStdLong()[dataStdLong()$measure_type == "muac", c("cid")])
-    
-    biasMUAC <- data.frame(matrix(nrow = nrow(mean_measure_muac[[1]]), 
-                                  ncol = nrow(mean_muac)))
-    
-    for(i in 1:ncol(mean_measure_muac[[1]])) {
-      biasMUAC[ , i] <- mean_measure_muac[[1]][ , i] / mean_muac[i, 1]
-    }
-    
+    mean_height <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "height", ],
+                                   measures = "measure_value",
+                                   index = "cid")
+
+    biasHeight <- estimate_bias(msur = mean_measure_height,
+                                msur = NA, mall = mean_height)$bias_med
+
+    mean_measure_weight <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "weight", ],
+                                           measures = "measure_value",
+                                           index = c("eid", "cid"))
+
+    mean_weight <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "weight", ],
+                                   measures = "measure_value",
+                                   index = "cid")
+
+    biasWeight <- estimate_bias(msur = mean_measure_weight,
+                                msur = NA, mall = mean_weight)$bias_med
+
+    mean_measure_muac <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "muac", ],
+                                         measures = "measure_value",
+                                         index = c("eid", "cid"))
+
+    mean_muac <- summary_measure(df = dataStdLong()[dataStdLong()$measure_type == "muac", ],
+                                 measures = "measure_value",
+                                 index = "cid")
+
+    biasMUAC <- estimate_bias(msur = mean_measure_muac,
+                              msur = NA, mall = mean_muac)$bias_med
+
     biasDF <- data.frame("eid" = 1:input$nEnumerators,
                          "height" = rowMeans(biasHeight, na.rm = TRUE),
                          "muac" = rowMeans(biasMUAC, na.rm = TRUE),
