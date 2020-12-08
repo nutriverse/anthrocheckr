@@ -7,15 +7,16 @@
 a coverage survey.}
 \format{
 A data frame with 7 columns and 744 rows:
-\describe{
-\item{\code{eid}}{Enumerator ID}
-\item{\code{cid}}{Child ID}
-\item{\code{round}}{Standardisation test round}
-\item{\code{weight}}{Weight measurement}
-\item{\code{height}}{Height measurement}
-\item{\code{muac}}{Mid-upper arm circumference measurement}
-\item{\code{oedema}}{Bilateral pitting oedema}
-}
+
+| **Variable** | **Description** |
+| :--- | :--- |
+| *eid* | Enumerator ID |
+| *cid* | Child ID |
+| *round* | Standardisation test round |
+| *weight* | Weight measurement |
+| *height* | Height measurement |
+| *muac* | Mid-upper arm circumference measurement |
+| *oedema* | Bilateral pitting oedema |
 }
 \usage{
 liberiaStdData
@@ -23,5 +24,10 @@ liberiaStdData
 \description{
 Dataset from a standardisation exercise done in Liberia in preparation for
 a coverage survey.
+}
+\examples{
+liberiaStdData
+
+
 }
 \keyword{datasets}

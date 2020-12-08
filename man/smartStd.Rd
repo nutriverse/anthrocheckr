@@ -3,30 +3,25 @@
 \docType{data}
 \name{smartStd}
 \alias{smartStd}
-\title{Example dataset from the Standardized Monitoring and Assessment of Relief
-and Transitions (SMART) capacity building toolbox found at
-<http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
-The dataset has been restructured into a less wide format compared to the
-original wide format.}
+\title{Standardisation test data - sample 1}
 \format{
 A data frame with 8 columns and 110 rows:
-\describe{
-\item{\code{subject}}{Unique identifier of subjects who were measured}
-\item{\code{observer}}{Unique identifier for those who performed the measurements.
-    A unique identifier of \code{0} is given to the supervisor or the gold
-    standard}
-\item{\code{weight1}}{First weight measurement. Units in kilograms}
-\item{\code{weight2}}{Second weight measurement. Units in kilograms}
-\item{\code{height1}}{First height measurement. Units in centimetres}
-\item{\code{height2}}{Second height measurement. Units in centimetres}
-\item{\code{muac1}}{First mid-upper arm circumference measurement. Units in millimetres}
-\item{\code{muac2}}{Second mid-upper arm circumference measurement. Units in millimetres}
-}
+
+| **Variable** | **Description** |
+| :--- | :--- |
+| *subject* | Unique identifier of subjects who were measured |
+| *observer* | Unique identifier for those who performed the measurements |
+| *weight1* | First weight measurement. Units in kilograms |
+| *weight2* | Second weight measurement. Units in kilograms |
+| *height1* | First height measurement. Units in centimetres |
+| *height2* | Second height measurement. Units in centimetres |
+| *muac1* | First mid-upper arm circumference measurement. Units in millimetres |
+| *muac* | Second mid-upper arm circumference measurement. Units in millimetres |
 }
 \source{
 Standardized Monitoring and Assessment of Relief and Transitions
-    (SMART) capacity building toolbox found at
-    <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
+  (SMART) capacity building toolbox found at
+  <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
 }
 \usage{
 smartStd
@@ -37,5 +32,9 @@ and Transitions (SMART) capacity building toolbox found at
 <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
 The dataset has been restructured into a less wide format compared to the
 original wide format.
+}
+\examples{
+smartStd
+
 }
 \keyword{datasets}

@@ -1,6 +1,8 @@
 ################################################################################
 #
 #'
+#' Calculate the summary measures of observations
+#'
 #' Get the mean, standard deviation and maximum value of the observations/
 #' measurements made by an observer across multiple subjects
 #'

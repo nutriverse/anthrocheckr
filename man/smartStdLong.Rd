@@ -3,12 +3,7 @@
 \docType{data}
 \name{smartStdLong}
 \alias{smartStdLong}
-\title{Example dataset from the Standardized Monitoring and Assessment of Relief
-and Transitions (SMART) capacity building toolbox found at
-<http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
-This dataset is the same as the \code{smartStd} dataset but has been restructured
-into a long format (as per tidyverse specifications) compared to original
-format.}
+\title{Standardisation test data - sample 2}
 \format{
 A data frame with 5 columns and 660 rows:
 \describe{
@@ -22,9 +17,9 @@ A data frame with 5 columns and 660 rows:
 }
 }
 \source{
-1.	Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
-    assessment of nutritional status. Br J Nutr. 2007;82: 165–13.
-    doi:10.1017/S0007114599001348
+Standardized Monitoring and Assessment of Relief and Transitions
+    (SMART) capacity building toolbox found at
+    <http://smartmethodology.org/survey-planning-tools/smart-capacity-building-toolbox/>.
 }
 \usage{
 smartStdLong
@@ -36,5 +31,9 @@ and Transitions (SMART) capacity building toolbox found at
 This dataset is the same as the \code{smartStd} dataset but has been restructured
 into a long format (as per tidyverse specifications) compared to original
 format.
+}
+\examples{
+smartStdLong
+
 }
 \keyword{datasets}

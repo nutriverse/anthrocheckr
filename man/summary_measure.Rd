@@ -2,8 +2,7 @@
 % Please edit documentation in R/01_summary_measure.R
 \name{summary_measure}
 \alias{summary_measure}
-\title{Get the mean, standard deviation and maximum value of the observations/
-measurements made by an observer across multiple subjects}
+\title{Calculate the summary measures of observations}
 \usage{
 summary_measure(df, measures, index = NULL)
 }
