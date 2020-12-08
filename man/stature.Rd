@@ -3,20 +3,21 @@
 \docType{data}
 \name{stature}
 \alias{stature}
-\title{Example dataset from Ulijaszek and Kerr (1999) containing repeat measurements
-of stature \code{m} carried out by four observers on ten subjects.}
+\title{Example dataset from *Ulijaszek and Kerr (1999)* containing repeat
+measurements of stature `m` carried out by four observers on ten subjects.}
 \format{
 A data frame with 8 columns and 10 rows:
-\describe{
-\item{\code{subject}}{Subject unique identification number}
-\item{\code{m1}}{Stature measurements of first observer}
-\item{\code{m2}}{Stature measurements of second observer}
-\item{\code{m3}}{Stature measurements of third observer}
-\item{\code{m4}}{Stature measurements of fourth observer}
-\item{\code{f1}}{Results of the first function in the group TEM equation}
-\item{\code{f2}}{Results of the second function in the group TEM equation}
-\item{\code{diff}}{Difference between \code{f2} and \code{f2} (\code{f2} - \code{f1})}
-}
+
+| **Variable** | **Description** |
+| :--- | :--- |
+| *subject* | Subject unique identification number |
+| *m1* | Stature measurements of first observer |
+| *m2* | Stature measurements of second observer |
+| *m3* | Stature measurements of third observer |
+| *m4* | Stature measurements of fourth observer |
+| *f1* | Results of the first function in the group TEM equation |
+| *f2* | Results of the second function in the group TEM equation |
+| *diff* | Difference between `f2` and `f2` (`f2` - `f1`) |
 }
 \source{
 Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
@@ -27,7 +28,11 @@ Ulijaszek SJ, Kerr DA. Anthropometric measurement error and the
 stature
 }
 \description{
-Example dataset from Ulijaszek and Kerr (1999) containing repeat measurements
-of stature \code{m} carried out by four observers on ten subjects.
+Example dataset from *Ulijaszek and Kerr (1999)* containing repeat
+measurements of stature `m` carried out by four observers on ten subjects.
+}
+\examples{
+stature
+
 }
 \keyword{datasets}

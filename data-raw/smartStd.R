@@ -1,5 +1,9 @@
 
 library(tidyr)
+library(readxl)
+library(tibble)
+library(magrittr)
+library(dplyr)
 
 x <- read.csv("data-raw/standardisation.csv")
 #x <- x[3:12, ]
@@ -82,5 +86,35 @@ smartStdLong <- zz
 devtools::use_data(smartStdLong, overwrite = TRUE)
 
 
+## SMART example data for standardisation ######################################
+
+x <- read_excel(path = "data-raw/Standardisation test.xlsx", skip = 1)
+
+## Rename columns
+
+rename_smrt_std <- function(measures = c("weight", "height", "muac"),
+                            nObservations = 2,
+                            nObservers = 10) {
+  ## Concatenating object
+  varnames <- NULL
+
+  ## Rename
+  for (i in c("supervisor", paste("enumerator", 1:nObservers, sep = ""))) {
+    for (j in measures) {
+      varnames <- c(varnames, paste(j, 1:nObservations, i, sep = "_"))
+    }
+  }
+
+  ## Return varnames
+  return(varnames)
+}
+
+names(x) <- rename_smrt_std()
+
+smartWide <- x %>%
+  mutate(subject = 1:nrow(x)) %>%
+  relocate(subject, .before = "weight_1_supervisor")
+
+usethis::use_data(smartWide, overwrite = TRUE, compress = "xz")
 
 
