@@ -32,9 +32,10 @@
 #' total_tem <- calculate_total_tem(intra = intra, inter = inter)
 #'
 #' # Calculate sd
-#' stdev <- summary_measure(df = smartStdLong[smartStdLong$measure_type == "muac", ],
-#'                          measures = "measure_value",
-#'                          index = "observer")
+#' stdev <- calculate_sd(
+#'   measures = subset(smartStdLong, measure_type == "muac")$measure_value,
+#'   index = subset(smartStdLong, measure_type == "muac")$observer
+#' )
 #'
 #' calculate_coeff_r(total_tem = total_tem, sd = stdev)
 #'

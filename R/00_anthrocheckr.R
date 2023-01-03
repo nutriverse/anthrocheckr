@@ -13,6 +13,7 @@
 #' @name anthrocheckr
 #' @importFrom stats sd
 #' @importFrom shiny runApp
+#' @importFrom methods is
 #'
 #
 ################################################################################

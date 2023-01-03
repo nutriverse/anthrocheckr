@@ -6,7 +6,7 @@
 #' @param tem A numeric vector or data frame of technical error of measurements
 #'   produced from applying [calculate_tem_cohort()].
 #' @param mean_value A numeric vector or data frame of mean of measurements
-#'   produced from applying [summary_measure()].
+#'   produced from applying [calculate_mean()].
 #'
 #' @return A vector or data frame of calculated relative TEM per observer and
 #'   per measurement type.
@@ -19,13 +19,10 @@
 #'                               index = "observer",
 #'                               n = 10)
 #'
-#'   x <- smartStd[ , c("observer", "weight1")]
-#'   y <- smartStd[ , c("observer", "weight2")]
-#'   names(x) <- names(y) <- c("observer", "weight")
-#'   temp <- data.frame(rbind(x, y))
+#'   x <- smartStdLong[smartStdLong$measure_type == "weight", ]
 #'
-#'   mean_value <- summary_measure(df = temp, measures = "weight",
-#'                                 index = "observer")$mean
+#'   mean_value <- calculate_mean(measures = x$measure_value,
+#'                                index = x[ , "observer"])
 #'
 #'   rel_tem <- calculate_relative_tem(tem = tem, mean_value = mean_value)
 #'   rel_tem
