@@ -1,7 +1,7 @@
 Anthropometrists
-AppVeyor
 Br
 CodeFactor
+Codecov
 Lifecycle
 Mortorell
 Nutr
@@ -18,6 +18,7 @@ measurers
 muac
 nolimits
 org
+sd
 smartmethodology
 tem
 tidyverse

@@ -25,7 +25,7 @@
 
 calculate_team_tem <- function(n, k, m) {
 
-  if(class(m) != "data.frame") {
+  if (!methods::is(m, "data.frame")) {
     stop(
       paste(
         strwrap("Measurements should be supplied as a data frame.

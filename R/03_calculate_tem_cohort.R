@@ -38,12 +38,12 @@
 
 calculate_tem_cohort <- function(df, m1, m2, index = NULL, n) {
   ## Check that m1 is a numeric vector
-  if(class(df[[m1]]) == "character" | class(df[[m1]]) == "factor") {
+  if (methods::is(df[[m1]], "character") | methods::is(df[[m1]], "factor")) {
     stop("m1 must be numeric. Try again.")
   }
 
   ## Check that m2 is a numeric vector
-  if(class(df[[m2]]) == "character" | class(df[[m2]]) == "factor") {
+  if (methods::is(df[[m2]], "character") | methods::is(df[[m2]], "factor")) {
     stop("m2 must be numeric. Try again.")
   }
 

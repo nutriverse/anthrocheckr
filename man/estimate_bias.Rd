@@ -23,14 +23,16 @@ standards are used in this function: 1) measurements made by a supervisor or
 a known expert; and, 2) median of all measurements made by the observers.
 }
 \examples{
-x <- summary_measure(df = smartStdLong,
-                     measures = "measure_value",
-                     index = c("observer", "measure_type"))
-y <- summary_measure(df = smartStdLong,
-                     measures = "measure_value",
-                     index = "measure_type")
-estimate_bias(msur = x$mean[x$observer != 0 & x$measure_type == "height"],
-              msup = x$mean[x$observer == 0 & x$measure_type == "height"],
-              mall = y$mean[y$measure_type == "height"])
+x <- subset(smartStdLong, measure_type == "height")
+
+y <- calculate_mean(
+  measures = x$measure_value, index = x$observer
+)
+
+z <- calculate_mean(x$measure_value)
+
+estimate_bias(msur = y$Freq[x$Var1 != 0],
+              msup = y$Freq[x$Var1 == 0],
+              mall = z)
 
 }
