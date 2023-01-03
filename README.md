@@ -20,7 +20,7 @@ status](https://github.com/nutriverse/anthrocheckr/workflows/R-CMD-check/badge.s
 [![R build
 status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/nutriverse/anthrocheckr?branch=master&svg=true)](https://ci.appveyor.com/project/nutriverse/anthrocheckr)
+status](https://ci.appveyor.com/api/projects/status/github/nutriverse/anthrocheckr?branch=main&svg=true)](https://ci.appveyor.com/project/nutriverse/anthrocheckr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
 <!-- badges: end -->
 
