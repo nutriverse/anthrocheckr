@@ -60,5 +60,6 @@ reference:
     contents:
     - smartStd
     - smartStdLong
+    - smartWide
     - stature
     - liberiaStdData
