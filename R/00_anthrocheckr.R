@@ -1,5 +1,5 @@
-################################################################################
-#
+#'
+#' An Implementation of Anthropometric Measurement Standardisation Tests
 #'
 #' Ensuring the precision and accuracy of measurements is critical when
 #' collecting anthropometric data. Anthropometrists are usually tested for
@@ -15,6 +15,4 @@
 #' @importFrom shiny runApp
 #' @importFrom methods is
 #'
-#
-################################################################################
 "_PACKAGE"

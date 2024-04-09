@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests in R <img src="man/figures/logo.png" width="200" align="right" />
+# anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests <img src="man/figures/logo.png" width="200" align="right" />
 
 <!-- badges: start -->
 
@@ -15,14 +15,12 @@ status](https://www.r-pkg.org/badges/version/anthrocheckr)](https://cran.r-proje
 [![CRAN](https://img.shields.io/cran/l/anhtrocheckr.svg)](https://CRAN.R-project.org/package=anhtrocheckr)
 [![CRAN](http://cranlogs.r-pkg.org/badges/anhtrocheckr)](https://CRAN.R-project.org/package=anhtrocheckr)
 [![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/anhtrocheckr)](https://CRAN.R-project.org/package=anhtrocheckr)
-[![R build
-status](https://github.com/nutriverse/anthrocheckr/workflows/R-CMD-check/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
+[![R-CMD-check](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml)
 [![R build
 status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
-[![R-CMD-check](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Ensuring the precision and accuracy of measurements is critical when
@@ -32,20 +30,47 @@ performed prior to anthropometric data collection. This package provides
 functions to calculate inter- and intra-observer technical error of
 measurement (TEM) to assess precision of measurements.
 
+## What does `anthrocheckr` do?
+
 ## Installation
 
-`anthrocheckr` is still in active development and is not available on
-[CRAN](https://cran.r-project.org/) yet.
-
-You can install the development version of `anthrocheckr` from
-[GitHub](https://github.com/nutriverse/anthrocheckr) with:
+`anthrocheckr` is not yet on [CRAN](https://cran.r-project.org) but can
+be installed from the [nutriverse R
+universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
-if(!require(remotes)) install.packages("remotes")
-remotes::install_github("nutriverse/anthrocheckr")
+install.packages(
+  "anthrocheckr",
+  repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
+)
 ```
 
 ## Usage
+
+## Citation
+
+If you find the `anthrocheckr` package useful please cite using the
+suggested citation provided by a call to the `citation()` function as
+follows:
+
+``` r
+citation("anthrocheckr")
+#> To cite anthrocheckr in publications use:
+#> 
+#>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of
+#>   Anthropometric Measurement Standardisation Tests_. R package version
+#>   0.0.9000, <https://nutriverse.io/anthrocheckr/>.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests},
+#>     author = {{Ernest Guevarra}},
+#>     year = {2024},
+#>     note = {R package version 0.0.9000},
+#>     url = {https://nutriverse.io/anthrocheckr/},
+#>   }
+```
 
 ## Community guidelines
 

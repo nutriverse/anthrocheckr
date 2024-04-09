@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Calculate intra-observer TEM for each observer
 #'
@@ -33,8 +31,6 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_tem_cohort <- function(df, m1, m2, index = NULL, n) {
   ## Check that m1 is a numeric vector
@@ -48,10 +44,12 @@ calculate_tem_cohort <- function(df, m1, m2, index = NULL, n) {
   }
 
   ## get TEM
-  tem <- tapply(X = df[[m1]] - df[[m2]],
-                INDEX = df[ , index],
-                FUN = calculate_tem,
-                n = n)
+  tem <- tapply(
+    X = df[[m1]] - df[[m2]],
+    INDEX = df[ , index],
+    FUN = calculate_tem,
+    n = n
+  )
 
   ## Create data.frame
   tem <- as.data.frame.table(tem)

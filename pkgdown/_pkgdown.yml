@@ -1,14 +1,40 @@
 title: anthrocheckr
 
-url: https://nutriverse.io/anthrocheckr
+url: https://nutriverse.io/anthrocheckr/
+
+development:
+  mode: auto
 
 template:
-  params:
-    bootswatch: yeti
-    ganalytics:
+  bootstrap: 5
+  bootswatch: cosmo
+  theme: haddock
+  ganalytics: #
 
 navbar:
-  type: inverse
+  bg: success
+  type: light
+  structure:
+    left:  [home, intro, reference, articles, news]
+    right: [mastodon, linkedin, github]
+
+  components:
+    articles:
+      text: Articles
+      menu:
+      - text: "Technical Error of Measurement"
+        href: articles/tem.html
+    mastodon:
+      icon: "fab fa-mastodon fa-lg"
+      href: https://fosstodon.org/@katilingban
+    linkedin:
+      icon: "fab fa-linkedin fa-lg"
+      href: https://www.linkedin.com/company/katilingban
+
+home:
+  links:
+  - text: Read more about technical error of measurement
+    href: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/402C85D95FBDB910A21ED28874775BC2/S0007114599001348a.pdf/anthropometric-measurement-error-and-the-assessment-of-nutritional-status.pdf
 
 reference:
   - title: Description

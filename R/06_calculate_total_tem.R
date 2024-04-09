@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Calculate the Total TEM given individual intra-observer TEM.
 #'
@@ -33,12 +31,10 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 calculate_total_tem <- function(intra, inter) {
   ## Get total TEM
-  total_tem <- sqrt((sum(intra ^ 2) / length(intra)) + (inter ^ 2)  )
+  total_tem <- sqrt((sum(intra ^ 2) / length(intra)) + (inter ^ 2))
 
   ## Return output
   return(total_tem)
