@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Calculate the mean, sd and maximum difference value of
 #' measurements/observations
@@ -59,8 +57,6 @@
 #' @rdname calculate_summary
 #' @export
 #'
-#
-################################################################################
 
 calculate_mean <- function(measures, index = NULL) {
   if (is.null(index)) {
@@ -75,14 +71,10 @@ calculate_mean <- function(measures, index = NULL) {
 }
 
 
-################################################################################
-#
 #'
 #' @rdname calculate_summary
 #' @export
 #'
-#
-################################################################################
 
 calculate_sd <- function(measures, index = NULL) {
   if (is.null(index)) {
@@ -96,14 +88,10 @@ calculate_sd <- function(measures, index = NULL) {
 }
 
 
-################################################################################
-#
 #'
 #' @rdname calculate_summary
 #' @export
 #'
-#
-################################################################################
 
 calculate_max <- function(measures, index = NULL) {
   if (is.null(index)) {

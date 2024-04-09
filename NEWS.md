@@ -1,3 +1,3 @@
-# anthrocheckr v0.1.0
+# anthrocheckr v0.0.0.9000
 
-This is the first CRAN release of `anthrocheckr`.
+This is a pre-release of `anthrocheckr`.

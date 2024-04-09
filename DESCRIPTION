@@ -1,7 +1,7 @@
 Package: anthrocheckr
 Type: Package
 Title: Anthropometric Measurement Standardisation Tests
-Version: 0.1.0
+Version: 0.0.0.9000
 Authors@R: person(given = "Ernest", 
                   family = "Guevarra", 
                   comment = c(ORCID = "0000-0002-4887-4415"), 
@@ -26,13 +26,14 @@ Suggests:
     openxlsx,
     shinydashboard,
     spelling,
-    testthat,
+    testthat (>= 3.0.0),
     dplyr,
     covr
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 URL: https://nutriverse.io/anthrocheckr/, https://github.com/nutriverse/anthrocheckr
 BugReports: https://github.com/nutriverse/anthrocheckr/issues
 VignetteBuilder: knitr
+Config/testthat/edition: 3
