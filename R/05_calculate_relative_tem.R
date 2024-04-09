@@ -33,5 +33,5 @@ calculate_relative_tem <- function(tem, mean_value) {
   relative_tem <- tem / mean_value * 100
 
   ## Return output
-  return(relative_tem)
+  relative_tem
 }

@@ -37,5 +37,5 @@ calculate_total_tem <- function(intra, inter) {
   total_tem <- sqrt((sum(intra ^ 2) / length(intra)) + (inter ^ 2))
 
   ## Return output
-  return(total_tem)
+  total_tem
 }

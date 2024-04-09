@@ -30,5 +30,5 @@ calculate_tem <- function(d, n) {
   tem <- sqrt(sum(d ^ 2) / (2 * n))
 
   ## Return output
-  return(tem)
+  tem
 }
