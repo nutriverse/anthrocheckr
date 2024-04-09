@@ -41,9 +41,14 @@ reference:
     contents:
     - anthrocheckr
 
+  - title: Summary
+    contents:
+    - calculate_sd
+    - calculate_mean
+    - calculate_max
+
   - title: Calculate
     contents:
-    - summary_measure
     - calculate_coeff_r
     - calculate_relative_tem
     - calculate_team_tem
