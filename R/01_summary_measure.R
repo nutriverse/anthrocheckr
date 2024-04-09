@@ -67,7 +67,7 @@ calculate_mean <- function(measures, index = NULL) {
   }
 
   ## return sm_mean
-  return(sm_mean)
+  sm_mean
 }
 
 
@@ -84,7 +84,7 @@ calculate_sd <- function(measures, index = NULL) {
   }
 
   ## return sm_sd
-  return(sm_sd)
+  sm_sd
 }
 
 
@@ -101,5 +101,5 @@ calculate_max <- function(measures, index = NULL) {
   }
 
   ## return sm_max_diff
-  return(sm_max_diff)
+  sm_max_diff
 }

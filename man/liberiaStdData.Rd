@@ -28,6 +28,5 @@ a coverage survey.
 \examples{
 liberiaStdData
 
-
 }
 \keyword{datasets}

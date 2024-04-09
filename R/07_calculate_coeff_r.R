@@ -44,5 +44,5 @@ calculate_coeff_r <- function(total_tem, sd) {
 
   coeff_r <- (total_tem ^ 2) / sd
 
-  return(coeff_r)
+  coeff_r
 }

@@ -60,5 +60,5 @@ calculate_team_tem <- function(n, k, m) {
   tem <- sqrt(sum(firstPart - secondPart) / (n * (k - 1)))
 
   ## Return output
-  return(tem)
+  tem
 }

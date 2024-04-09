@@ -39,5 +39,5 @@ estimate_bias <- function(msur, msup, mall) {
   bias <- data.frame(bias_super, bias_med)
 
   ## Return output
-  return(bias)
+  bias
 }
