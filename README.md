@@ -10,11 +10,6 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/anthrocheckr)](https://cran.r-project.org/package=anthrocheckr)
-[![CRAN](https://img.shields.io/cran/l/anhtrocheckr.svg)](https://CRAN.R-project.org/package=anhtrocheckr)
-[![CRAN](http://cranlogs.r-pkg.org/badges/anhtrocheckr)](https://CRAN.R-project.org/package=anhtrocheckr)
-[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/anhtrocheckr)](https://CRAN.R-project.org/package=anhtrocheckr)
 [![R-CMD-check](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml)
 [![R build
 status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
@@ -58,8 +53,8 @@ citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
 #>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of
-#>   Anthropometric Measurement Standardisation Tests_. R package version
-#>   0.0.9000, <https://nutriverse.io/anthrocheckr/>.
+#>   Anthropometric Measurement Standardisation Tests_. R package
+#>   version 0.0.9000, <https://nutriverse.io/anthrocheckr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -80,7 +75,7 @@ If you would like to contribute to the package, please see our
 [contributing
 guidelines](https://nutriverse.io/anthrocheckr/CONTRIBUTING.html).
 
-Please note that the `ennet` project is released with a [Contributor
-Code of
+Please note that the `anthrocheckr` project is released with a
+[Contributor Code of
 Conduct](https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.

@@ -32,7 +32,7 @@ Suggests:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 URL: https://nutriverse.io/anthrocheckr/, https://github.com/nutriverse/anthrocheckr
 BugReports: https://github.com/nutriverse/anthrocheckr/issues
 VignetteBuilder: knitr
