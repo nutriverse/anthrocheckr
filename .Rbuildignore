@@ -11,3 +11,4 @@
 ^\.github$
 ^pkgdown$
 ^codecov\.yml$
+^README\.html$
