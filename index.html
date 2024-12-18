@@ -25,7 +25,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-success" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top bg-success" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">anthrocheckr</a>
 
@@ -38,6 +38,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="articles/anthrocheckr.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -48,8 +49,10 @@
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="https://fosstodon.org/@katilingban"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://www.linkedin.com/company/katilingban"><span class="fa fab fa-linkedin fa-lg"></span></a></li>
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://fosstodon.org/@nutriverse" aria-label="Mastodon"><span class="fa fab fa-mastodon fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/nutriverse/anthrocheckr/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
@@ -67,13 +70,22 @@
 
 <p>Ensuring the precision and accuracy of measurements is critical when collecting anthropometric data. Anthropometrists are usually tested for precision and accuracy of measurement through standardisation tests performed prior to anthropometric data collection. This package provides functions to calculate inter- and intra-observer technical error of measurement (TEM) to assess precision of measurements.</p>
 <div class="section level2">
-<h2 id="what-does-anthrocheckr-do">What does <code>anthrocheckr</code> do?<a class="anchor" aria-label="anchor" href="#what-does-anthrocheckr-do"></a>
+<h2 id="what-does-the-package-do">What does the package do?<a class="anchor" aria-label="anchor" href="#what-does-the-package-do"></a>
 </h2>
+<p><a href="https://nutriverse.io/anthrocheckr/">anthrocheckr</a> provides functions for:</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculating standard summaries for intra-observer or inter-observer measurements;</p></li>
+<li><p>Calculating intra-observer or inter-observer technical error of measurement (TEM) for multiple subjects and for multiple measurers/observers;</p></li>
+<li><p>Calculating multiple measurers/observers relative technical error of measurement (relative TEM);</p></li>
+<li><p>Calculating intra-observer total technical error of measurement (total TEM);</p></li>
+<li><p>Calculating coefficient of reliability; and,</p></li>
+<li><p>Calculating bias in measurements/observation against a gold standard.</p></li>
+</ol>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p><code>anthrocheckr</code> is not yet on <a href="https://cran.r-project.org" class="external-link">CRAN</a> but can be installed from the <a href="https://nutriverse.r-universe.dev" class="external-link">nutriverse R universe</a> as follows:</p>
+<p><a href="https://nutriverse.io/anthrocheckr/">anthrocheckr</a> is not yet on <a href="https://cran.r-project.org" class="external-link">CRAN</a> but can be installed from the <a href="https://nutriverse.r-universe.dev" class="external-link">nutriverse R Universe</a> as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
 <span>  <span class="st">"anthrocheckr"</span>,</span>
@@ -87,14 +99,14 @@
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
-<p>If you find the <code>anthrocheckr</code> package useful please cite using the suggested citation provided by a call to the <code><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation()</a></code> function as follows:</p>
+<p>If you find the <a href="https://nutriverse.io/anthrocheckr/">anthrocheckr</a> package useful please cite using the suggested citation provided by a call to the <code><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation()</a></code> function as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"anthrocheckr"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite anthrocheckr in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Ernest Guevarra (2024). _anthrocheckr: An Implementation of</span></span>
-<span><span class="co">#&gt;   Anthropometric Measurement Standardisation Tests_. R package</span></span>
-<span><span class="co">#&gt;   version 0.0.9000, &lt;https://nutriverse.io/anthrocheckr/&gt;.</span></span>
+<span><span class="co">#&gt;   Ernest Guevarra (2024). _anthrocheckr: An Implementation of Anthropometric</span></span>
+<span><span class="co">#&gt;   Measurement Standardisation Tests_. R package version 0.0.9000,</span></span>
+<span><span class="co">#&gt;   &lt;https://nutriverse.io/anthrocheckr/&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -110,7 +122,7 @@
 <h2 id="community-guidelines">Community guidelines<a class="anchor" aria-label="anchor" href="#community-guidelines"></a>
 </h2>
 <p>Feedback, bug reports and feature requests are welcome; file issues or seek support <a href="https://github.com/nutriverse/anthrocheckr/issues" class="external-link">here</a>. If you would like to contribute to the package, please see our <a href="https://nutriverse.io/anthrocheckr/CONTRIBUTING.html">contributing guidelines</a>.</p>
-<p>Please note that the <code>anthrocheckr</code> project is released with a <a href="https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the <a href="https://nutriverse.io/anthrocheckr/">anthrocheckr</a> project is released with a <a href="https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
