@@ -15,15 +15,15 @@
 #' @examples
 #' x <- subset(smartStdLong, measure_type == "height")
 #'
-#' y <- calculate_mean(
-#'   measures = x$measure_value, index = x$observer
-#' )
+#' y <- calculate_mean(measures = x$measure_value, index = x$observer)
 #'
 #' z <- calculate_mean(x$measure_value)
 #'
-#' estimate_bias(msur = y$Freq[x$Var1 != 0],
-#'               msup = y$Freq[x$Var1 == 0],
-#'               mall = z)
+#' estimate_bias(
+#'   msur = y$mean[y$index != 0],
+#'   msup = y$mean[y$index == 0],
+#'   mall = z
+#' )
 #'
 #' @export
 #'
