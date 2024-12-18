@@ -23,26 +23,17 @@ calculate_team_tem <- function(n, k, m) {
 
   if (!methods::is(m, "data.frame")) {
     stop(
-      paste(
-        strwrap("Measurements should be supplied as a data frame.
-                Please check and try again.",
-                width = 80),
-        "\n",
-        collapse = "\n"
-      )
+      "Measurements should be supplied as a data frame. ",
+      "Please check and try again.",
+      call. = TRUE
     )
   }
 
   if(ncol(m) != k | nrow(m) != n) {
     stop(
-      paste(
-        strwrap("Measurements data frame should have rows equal to number of
-                subjects and columns equal to number of observers.
-                Please check and try again.",
-                width = 80),
-        "\n",
-        collapse = "\n"
-      )
+      "Measurements data frame should have rows equal to number of subjects ",
+      "and columns equal to number of observers. Please check and try again.",
+      call. = TRUE
     )
   }
 
