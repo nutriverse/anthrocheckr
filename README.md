@@ -16,6 +16,7 @@ status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
+[![DOI](https://zenodo.org/badge/162917178.svg)](https://zenodo.org/badge/latestdoi/162917178)
 <!-- badges: end -->
 
 Ensuring the precision and accuracy of measurements is critical when
