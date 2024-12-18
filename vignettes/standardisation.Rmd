@@ -26,11 +26,11 @@ The standardisation test evaluates the **precision** and the **accuracy** of the
 
 The **accuracy** of measurements taken by survey personnel is determined by how close they are to the true value with repeated measurements. On the other hand, the **precision** of measurements taken by survey personnel is determined by how similar the values are of repeated measurements made. In preparation for a nutrition survey while the survey personnel are in training, the aim is for survey personnel to be *highly accurate* and *highly precise* with their anthropometric measurements.
 
-![Relationship between accuracy and precision](man/figures/accuracyPrecision.png)
+![Relationship between accuracy and precision](../man/figures/accuracyPrecision.png)
 
 ## Mechanics {#sec-standardisation-test-mechanics}
 
-The general process of the standardisation test is for each survey personnel to take measurements of at least 10 children 6-59 months, twice, with an interval of time between the 1st and 2nd measurements.
+The general process of the standardisation test is for each survey personnel to take measurements of at least 10 children 6-59 months, twice, with an interval of time between the first and second measurements.
 
 ### Test parameters {#sec-standardisation-test-parameters}
 
@@ -83,8 +83,6 @@ For larger scale surveys with survey personnel more than 20, more days will be r
 
 1. The supervisor carefully performs the measurements on each child without allowing the teams to see the values. The supervisor records his/her measurements on the standardisation test form for the first round of measurements.
 
-::: {#tbl-standardisation-test-form}
-
 +----------+-------------+-------------+-----------+-----------------+
 | Child ID | Weight (kg) | Height (cm) | MUAC (mm) | Oedema (yes/no) |
 +==========+=============+=============+===========+=================+
@@ -109,7 +107,7 @@ For larger scale surveys with survey personnel more than 20, more days will be r
 | 10       |             |             |           |                 |
 +----------+-------------+-------------+-----------+-----------------+
 
-2. Each team starts with a different child, and the first half of the team measures the child once and records the results in a standard form for the 1st measurement (as above). The current measurer should make sure that he/she is entering data in the row corresponding to the child ID of the child he/she is currently measuring.
+2. Each team starts with a different child, and the first half of the team measures the child once and records the results in a standard form for the first measurement (as above). The current measurer should make sure that he/she is entering data in the row corresponding to the child ID of the child he/she is currently measuring.
 
 3. When the first half of the team has done the measurements for the current child, they should move on to the next child. After the first half of all the teams has measured 10 children once, the first measurement round forms are handed in. The teams and the children then take a break. Appropriate incentives including food and drinks to snack on during the break should be provided to the mothers and children.
 
