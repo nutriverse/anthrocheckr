@@ -195,9 +195,9 @@ calculate_relative_tem(intra_tem$tem, mean_weight$mean)
 
 ## Citation
 
-If you find the `{anthrocheckr}` package useful please cite using the
-suggested citation provided by a call to the `citation()` function as
-follows:
+If you use the `{anthrocheckr}` package in your work, please cite using
+the suggested citation provided by a call to the `citation()` function
+as follows:
 
 ``` r
 citation("anthrocheckr")
