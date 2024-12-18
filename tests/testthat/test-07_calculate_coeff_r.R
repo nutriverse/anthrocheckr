@@ -1,4 +1,4 @@
-# Tests for calculate_total_tem ------------------------------------------------
+# Tests for calculate_coeff_r --------------------------------------------------
 
 ## Calculate intra-observer TEM
 intra <- calculate_tem_cohort(
@@ -22,6 +22,16 @@ inter <- calculate_team_tem(n = 10, k = 22, m = muacDF[ , 2:23])
 
 total_tem <- calculate_total_tem(intra = intra$tem, inter = inter)
 
-test_that("calculate_total_tem works as expected", {
-  expect_type(total_tem, "double")
+## Calculate sd
+stdev <- calculate_sd(
+  measures = subset(smartStdLong, measure_type == "muac")$measure_value,
+  index = subset(smartStdLong, measure_type == "muac")$observer
+)
+
+
+test_that("calculate_coeff_r works as expected", {
+  expect_type(
+    calculate_coeff_r(total_tem = total_tem, sd = stdev$sd),
+    "double"
+  )
 })
