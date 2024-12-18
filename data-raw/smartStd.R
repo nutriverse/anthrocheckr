@@ -65,7 +65,7 @@ smartStd <- data.frame(subject, observer, y)
 usethis::use_data(smartStd, overwrite = TRUE)
 
 #
-# Convert to long format with first measurements and second measurements on spearate columns
+# Convert to long format with first measurements and second measurements on separate columns
 #
 xx <- subset(smartStd, select = c(-weight2, -height2, -muac2))
 names(xx) <- c("subject", "observer", "weight", "height", "muac")
