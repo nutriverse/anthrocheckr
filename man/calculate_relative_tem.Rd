@@ -30,10 +30,14 @@ Calculate relative TEM of measurements by multiple observers.
 
   x <- smartStdLong[smartStdLong$measure_type == "weight", ]
 
-  mean_value <- calculate_mean(measures = x$measure_value,
-                               index = x[ , "observer"])
+  mean_value <- calculate_mean(
+    measures = x$measure_value, index = x[ , "observer"]
+  )
 
-  rel_tem <- calculate_relative_tem(tem = tem, mean_value = mean_value)
+  rel_tem <- calculate_relative_tem(
+    tem = tem$tem, mean_value = mean_value$mean
+  )
+  
   rel_tem
 
 }
