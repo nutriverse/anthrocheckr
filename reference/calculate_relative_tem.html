@@ -78,24 +78,17 @@ produced from applying [calculate_mean()].</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">smartStdLong</span><span class="op">[</span><span class="va">smartStdLong</span><span class="op">$</span><span class="va">measure_type</span> <span class="op">==</span> <span class="st">"weight"</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="va">mean_value</span> <span class="op">&lt;-</span> <span class="fu"><a href="calculate_summary.html">calculate_mean</a></span><span class="op">(</span>measures <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">measure_value</span>,</span></span>
-<span class="r-in"><span>                               index <span class="op">=</span> <span class="va">x</span><span class="op">[</span> , <span class="st">"observer"</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">mean_value</span> <span class="op">&lt;-</span> <span class="fu"><a href="calculate_summary.html">calculate_mean</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    measures <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">measure_value</span>, index <span class="op">=</span> <span class="va">x</span><span class="op">[</span> , <span class="st">"observer"</span><span class="op">]</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="va">rel_tem</span> <span class="op">&lt;-</span> <span class="fu">calculate_relative_tem</span><span class="op">(</span>tem <span class="op">=</span> <span class="va">tem</span>, mean_value <span class="op">=</span> <span class="va">mean_value</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>‘/’ not meaningful for factors</span>
+<span class="r-in"><span>  <span class="va">rel_tem</span> <span class="op">&lt;-</span> <span class="fu">calculate_relative_tem</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    tem <span class="op">=</span> <span class="va">tem</span><span class="op">$</span><span class="va">tem</span>, mean_value <span class="op">=</span> <span class="va">mean_value</span><span class="op">$</span><span class="va">mean</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="va">rel_tem</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    observer       tem</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        NA 0.5501370</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        NA 2.3430872</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        NA 0.8126483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4        NA 0.4337829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        NA 1.1606699</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        NA 9.7163749</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        NA 0.9408907</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        NA 0.6987351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        NA 0.7782767</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       NA 0.7477441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       NA 2.0123765</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.5501370 2.3430872 0.8126483 0.4337829 1.1606699 9.7163749 0.9408907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 0.6987351 0.7782767 0.7477441 2.0123765</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
