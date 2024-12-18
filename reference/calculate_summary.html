@@ -93,7 +93,7 @@ grouping.</p></dd>
 <span class="r-in"><span><span class="co">## smartStdLong dataset</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">smartStdLong</span><span class="op">[</span><span class="va">smartStdLong</span><span class="op">$</span><span class="va">observer</span> <span class="op">==</span> <span class="fl">0</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="fu">calculate_mean</span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">measure_value</span>, <span class="va">x</span><span class="op">$</span><span class="va">measure_type</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     Var1    Freq</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    index    mean</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 height  95.495</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   muac 164.350</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 weight  14.655</span>
@@ -108,8 +108,10 @@ grouping.</p></dd>
 <span class="r-in"><span><span class="co">## smartStdLong dataset</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">smartStdLong</span><span class="op">[</span><span class="va">smartStdLong</span><span class="op">$</span><span class="va">observer</span> <span class="op">==</span> <span class="fl">0</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="fu">calculate_sd</span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">measure_value</span>, <span class="va">x</span><span class="op">$</span><span class="va">measure_type</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   height     muac   weight </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4.953306 9.626034 1.793988 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    index       sd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 height 4.953306</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   muac 9.626034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 weight 1.793988</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Get the max difference of weight measurements by observer 0 (supervisor)</span></span></span>
 <span class="r-in"><span><span class="co">## from the smartStd dataset</span></span></span>
@@ -124,8 +126,10 @@ grouping.</p></dd>
 <span class="r-in"><span>                <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">height1</span> <span class="op">-</span> <span class="va">x</span><span class="op">$</span><span class="va">height2</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>                <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">muac1</span> <span class="op">-</span> <span class="va">x</span><span class="op">$</span><span class="va">muac2</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>              <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"weight"</span>, <span class="fl">10</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"height"</span>, <span class="fl">10</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"muac"</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height   muac weight </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2.2   11.0    0.2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    index max_diff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 height      2.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   muac     11.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 weight      0.2</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
