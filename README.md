@@ -25,13 +25,33 @@ performed prior to anthropometric data collection. This package provides
 functions to calculate inter- and intra-observer technical error of
 measurement (TEM) to assess precision of measurements.
 
-## What does `anthrocheckr` do?
+## What does the package do?
+
+`{anthrocheckr}` provides functions for:
+
+1.  Calculating standard summaries for intra-observer or inter-observer
+    measurements;
+
+2.  Calculating intra-observer or inter-observer technical error of
+    measurement (TEM) for multiple subjects and for multiple
+    measurers/observers;
+
+3.  Calculating multiple measurers/observers relative technical error of
+    measurement (relative TEM);
+
+4.  Calculating intra-observer total technical error of measurement
+    (total TEM);
+
+5.  Calculating coefficient of reliability; and,
+
+6.  Calculating bias in measurements/observation against a gold
+    standard.
 
 ## Installation
 
-`anthrocheckr` is not yet on [CRAN](https://cran.r-project.org) but can
-be installed from the [nutriverse R
-universe](https://nutriverse.r-universe.dev) as follows:
+`{anthrocheckr}` is not yet on [CRAN](https://cran.r-project.org) but
+can be installed from the [nutriverse R
+Universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
 install.packages(
@@ -44,7 +64,7 @@ install.packages(
 
 ## Citation
 
-If you find the `anthrocheckr` package useful please cite using the
+If you find the `{anthrocheckr}` package useful please cite using the
 suggested citation provided by a call to the `citation()` function as
 follows:
 
@@ -53,8 +73,9 @@ citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
 #>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of
-#>   Anthropometric Measurement Standardisation Tests_. R package
-#>   version 0.0.9000, <https://nutriverse.io/anthrocheckr/>.
+#>   Anthropometric Measurement Standardisation Tests_. R
+#>   package version 0.0.9000,
+#>   <https://nutriverse.io/anthrocheckr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
