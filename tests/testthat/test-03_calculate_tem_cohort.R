@@ -4,7 +4,7 @@ xx <- calculate_tem_cohort(df = smartStd,
 
 
 test_that("output is a data.frame", {
-  expect_is(xx, "data.frame")
+  expect_s3_class(xx, "data.frame")
 })
 
 yy <- smartStd

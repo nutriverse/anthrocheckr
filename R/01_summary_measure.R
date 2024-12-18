@@ -64,6 +64,7 @@ calculate_mean <- function(measures, index = NULL) {
   } else {
     sm_mean <- tapply(X = measures, INDEX = index, FUN = mean, na.rm = TRUE)
     sm_mean <- as.data.frame.table(sm_mean)
+    names(sm_mean) <- c("index", "mean")
   }
 
   ## return sm_mean
@@ -81,6 +82,8 @@ calculate_sd <- function(measures, index = NULL) {
     sm_sd <- sd(measures, na.rm = TRUE)
   } else {
     sm_sd <- tapply(X = measures, INDEX = index, FUN = sd, na.rm = TRUE)
+    sm_sd <- as.data.frame.table(sm_sd)
+    names(sm_sd) <- c("index", "sd")
   }
 
   ## return sm_sd
@@ -98,6 +101,8 @@ calculate_max <- function(measures, index = NULL) {
     sm_max_diff <- sd(measures, na.rm = TRUE)
   } else {
     sm_max_diff <- tapply(X = measures, INDEX = index, FUN = max, na.rm = TRUE)
+    sm_max_diff <- as.data.frame.table(sm_max_diff)
+    names(sm_max_diff) <- c("index", "max_diff")
   }
 
   ## return sm_max_diff

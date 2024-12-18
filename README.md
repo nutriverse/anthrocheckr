@@ -73,7 +73,7 @@ citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
 #>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of Anthropometric
-#>   Measurement Standardisation Tests_. R package version 0.0.9000,
+#>   Measurement Standardisation Tests_. R package version 0.0.0.9000,
 #>   <https://nutriverse.io/anthrocheckr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -82,7 +82,7 @@ citation("anthrocheckr")
 #>     title = {anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests},
 #>     author = {{Ernest Guevarra}},
 #>     year = {2024},
-#>     note = {R package version 0.0.9000},
+#>     note = {R package version 0.0.0.9000},
 #>     url = {https://nutriverse.io/anthrocheckr/},
 #>   }
 ```
