@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
 [![Codecov test coverage](https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
+[![DOI](https://zenodo.org/badge/162917178.svg)](https://zenodo.org/badge/latestdoi/162917178)
 <!-- badges: end -->
 
 Ensuring the precision and accuracy of measurements is critical when collecting anthropometric data. Anthropometrists are usually tested for precision and accuracy of measurement through standardisation tests performed prior to anthropometric data collection. This package provides functions to calculate inter- and intra-observer technical error of measurement (TEM) to assess precision of measurements.
@@ -56,8 +57,94 @@ install.packages(
 
 ## Usage
 
+### Calculate intra-observer and/or inter-observer summaries
+
+The *mean*, *standard deviation*, and *maximum difference in measurements* are the requisite summary measures for various anthropometric measurement standardisations tests. These can be calculated as follows:
+
+```{r mean-summary}
+## Intra-observer mean for weight ----
+weight_df <- subset(smartStdLong, subset = measure_type == "weight")
+
+calculate_mean(weight_df$measure_value, index = weight_df$observer)
+```
+
+```{r sd-summary}
+## Intra-observer sd for weight ----
+calculate_sd(weight_df$measure_value, index = weight_df$observer)
+```
+
+```{r max-diff-summary}
+## Intra-observer max difference for weight ----
+weight_df_wide <- tidyr::pivot_wider(
+  weight_df, 
+  names_from = c(measure_type, measure_round), 
+  values_from = measure_value, names_sep = "_"
+)
+
+calculate_max(
+  abs(weight_df_wide$weight_1 - weight_df_wide$weight_2), 
+  index = weight_df_wide$observer
+)
+```
+
+### Calculate intra-observer and inter-observer technical error of measurement (TEM)
+
+```{r calculate-inter-tem, eval = FALSE}
+## Inter-observer max difference for weight ----
+weight_df_wide <- tidyr::pivot_wider(
+  weight_df, 
+  names_from = c(measure_type, measure_round), 
+  values_from = measure_value, names_sep = "_"
+)
+
+inter_tem <- calculate_tem(
+  abs(weight_df_wide$weight_1 - weight_df_wide$weight_2), 
+  n = nrow(weight_df_wide)
+)
+```
+
+which gives
+
+```{r calculate-inter-tem-show, echo = FALSE}
+calculate_tem(
+  abs(weight_df_wide$weight_1 - weight_df_wide$weight_2), 
+  n = nrow(weight_df_wide)
+)
+```
 
 
+```{r calculate-intra-tem, eval = FALSE}
+## Intra-observer max difference for weight ----
+weight_df_wide <- tidyr::pivot_wider(
+  weight_df, 
+  names_from = c(measure_type, measure_round), 
+  values_from = measure_value, names_sep = "_"
+)
+
+intra_tem <- calculate_tem_cohort(
+  df = weight_df_wide, m1 = "weight_1", m2 = "weight_2",
+  index = "observer", n = nrow(weight_df_wide)
+)
+```
+
+which gives
+
+```{r calculate-intra-tem-show, echo = FALSE}
+calculate_tem_cohort(
+  df = weight_df_wide, m1 = "weight_1", m2 = "weight_2",
+  index = "observer", n = nrow(weight_df_wide)
+)
+```
+
+### Calculating relative technical error of measurement
+
+```{r calculate-relative-tem}
+mean_weight <- calculate_mean(
+  weight_df$measure_value, index = weight_df$observer
+)
+
+calculate_relative_tem(intra_tem$tem, mean_weight$mean)
+```
 
 ## Citation
 
