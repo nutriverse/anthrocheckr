@@ -62,7 +62,7 @@ subject <- rep(1:10, 11)
 
 smartStd <- data.frame(subject, observer, y)
 
-devtools::use_data(smartStd, overwrite = TRUE)
+usethis::use_data(smartStd, overwrite = TRUE)
 
 #
 # Convert to long format with first measurements and second measurements on spearate columns
@@ -83,7 +83,7 @@ zz$measure_round <- ifelse(zz$measure_round == "measure_value1", 1, 2)
 
 smartStdLong <- zz
 
-devtools::use_data(smartStdLong, overwrite = TRUE)
+usethis::use_data(smartStdLong, overwrite = TRUE)
 
 
 ## SMART example data for standardisation ######################################

@@ -1,7 +1,7 @@
 Package: anthrocheckr
 Type: Package
 Title: Anthropometric Measurement Standardisation Tests
-Version: 0.0.0.9000
+Version: 0.1.0.9000
 Authors@R: person(given = "Ernest", 
                   family = "Guevarra", 
                   comment = c(ORCID = "0000-0002-4887-4415"), 
