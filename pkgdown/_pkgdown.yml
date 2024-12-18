@@ -7,16 +7,19 @@ development:
 
 template:
   bootstrap: 5
-  bootswatch: cosmo
-  theme: haddock
-  ganalytics: #
+  theme: breeze-light
+  ganalytics: "G-83YFE32VFQ"
+  bslib:
+    bootswatch: pulse
+    pkgdown-nav-height: 100px
+    success: "#004225"
 
 navbar:
   bg: success
-  type: light
+  type: dark
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [mastodon, linkedin, github]
+    right: [search, mastodon, github]
 
   components:
     articles:
@@ -26,10 +29,8 @@ navbar:
         href: articles/tem.html
     mastodon:
       icon: "fab fa-mastodon fa-lg"
-      href: https://fosstodon.org/@katilingban
-    linkedin:
-      icon: "fab fa-linkedin fa-lg"
-      href: https://www.linkedin.com/company/katilingban
+      aria-label: Mastodon
+      href: https://fosstodon.org/@nutriverse
 
 home:
   links:
