@@ -72,9 +72,8 @@ follows:
 citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
-#>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of
-#>   Anthropometric Measurement Standardisation Tests_. R
-#>   package version 0.0.9000,
+#>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of Anthropometric
+#>   Measurement Standardisation Tests_. R package version 0.0.9000,
 #>   <https://nutriverse.io/anthrocheckr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -96,7 +95,7 @@ If you would like to contribute to the package, please see our
 [contributing
 guidelines](https://nutriverse.io/anthrocheckr/CONTRIBUTING.html).
 
-Please note that the `anthrocheckr` project is released with a
+Please note that the `{anthrocheckr}` project is released with a
 [Contributor Code of
 Conduct](https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
