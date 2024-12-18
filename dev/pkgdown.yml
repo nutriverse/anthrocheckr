@@ -1,0 +1,11 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  anthrocheckr: anthrocheckr.html
+  standardisation: standardisation.html
+  tem: tem.html
+last_built: 2024-12-18T07:43Z
+urls:
+  reference: https://nutriverse.io/anthrocheckr/reference
+  article: https://nutriverse.io/anthrocheckr/articles
