@@ -25,6 +25,8 @@ navbar:
     articles:
       text: Articles
       menu:
+      - text: "Standardisation Test"
+        href: articles/standardisation.html
       - text: "Technical Error of Measurement"
         href: articles/tem.html
     mastodon:

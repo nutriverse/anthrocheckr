@@ -20,4 +20,4 @@ stature <- data.frame(y)
 
 names(stature) <- c("subject", "m1", "m2", "m3", "m4", "f1", "f2", "diff")
 
-devtools::use_data(stature, overwrite = TRUE)
+usethis::use_data(stature, overwrite = TRUE, compress = "xz")

@@ -1,7 +1,7 @@
 Package: anthrocheckr
 Type: Package
 Title: Anthropometric Measurement Standardisation Tests
-Version: 0.0.0.9000
+Version: 0.1.0.9000
 Authors@R: person(given = "Ernest", 
                   family = "Guevarra", 
                   comment = c(ORCID = "0000-0002-4887-4415"), 
@@ -14,7 +14,7 @@ Description: Ensuring the precision and accuracy of measurements is critical
     functions to calculate inter- and intra-observer technical error of
     measurement (TEM) to assess precision of measurements.
 License: GPL-3
-Depends: R (>= 2.10)
+Depends: R (>= 4.1.0)
 Imports:
     methods,
     shiny
