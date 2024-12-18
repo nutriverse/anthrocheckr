@@ -95,17 +95,134 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
+<div class="section level3">
+<h3 id="calculate-intra-observer-andor-inter-observer-summaries">Calculate intra-observer and/or inter-observer summaries<a class="anchor" aria-label="anchor" href="#calculate-intra-observer-andor-inter-observer-summaries"></a>
+</h3>
+<p>The <em>mean</em>, <em>standard deviation</em>, and <em>maximum difference in measurements</em> are the requisite summary measures for various anthropometric measurement standardisations tests. These can be calculated as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Intra-observer mean for weight ----</span></span>
+<span><span class="va">weight_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">smartStdLong</span>, subset <span class="op">=</span> <span class="va">measure_type</span> <span class="op">==</span> <span class="st">"weight"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/calculate_summary.html">calculate_mean</a></span><span class="op">(</span><span class="va">weight_df</span><span class="op">$</span><span class="va">measure_value</span>, index <span class="op">=</span> <span class="va">weight_df</span><span class="op">$</span><span class="va">observer</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    index   mean</span></span>
+<span><span class="co">#&gt; 1      0 14.655</span></span>
+<span><span class="co">#&gt; 2      1 14.410</span></span>
+<span><span class="co">#&gt; 3      2 14.560</span></span>
+<span><span class="co">#&gt; 4      3 14.580</span></span>
+<span><span class="co">#&gt; 5      4 14.545</span></span>
+<span><span class="co">#&gt; 6      5 14.285</span></span>
+<span><span class="co">#&gt; 7      6 14.650</span></span>
+<span><span class="co">#&gt; 8      7 14.665</span></span>
+<span><span class="co">#&gt; 9      8 14.650</span></span>
+<span><span class="co">#&gt; 10     9 14.650</span></span>
+<span><span class="co">#&gt; 11    10 14.615</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Intra-observer sd for weight ----</span></span>
+<span><span class="fu"><a href="reference/calculate_summary.html">calculate_sd</a></span><span class="op">(</span><span class="va">weight_df</span><span class="op">$</span><span class="va">measure_value</span>, index <span class="op">=</span> <span class="va">weight_df</span><span class="op">$</span><span class="va">observer</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    index       sd</span></span>
+<span><span class="co">#&gt; 1      0 1.793988</span></span>
+<span><span class="co">#&gt; 2      1 1.742926</span></span>
+<span><span class="co">#&gt; 3      2 1.753913</span></span>
+<span><span class="co">#&gt; 4      3 1.757870</span></span>
+<span><span class="co">#&gt; 5      4 1.743703</span></span>
+<span><span class="co">#&gt; 6      5 2.024657</span></span>
+<span><span class="co">#&gt; 7      6 1.764116</span></span>
+<span><span class="co">#&gt; 8      7 1.691861</span></span>
+<span><span class="co">#&gt; 9      8 1.810932</span></span>
+<span><span class="co">#&gt; 10     9 1.735238</span></span>
+<span><span class="co">#&gt; 11    10 1.699311</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Intra-observer max difference for weight ----</span></span>
+<span><span class="va">weight_df_wide</span> <span class="op">&lt;-</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span></span>
+<span>  <span class="va">weight_df</span>, </span>
+<span>  names_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">measure_type</span>, <span class="va">measure_round</span><span class="op">)</span>, </span>
+<span>  values_from <span class="op">=</span> <span class="va">measure_value</span>, names_sep <span class="op">=</span> <span class="st">"_"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/calculate_summary.html">calculate_max</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">weight_df_wide</span><span class="op">$</span><span class="va">weight_1</span> <span class="op">-</span> <span class="va">weight_df_wide</span><span class="op">$</span><span class="va">weight_2</span><span class="op">)</span>, </span>
+<span>  index <span class="op">=</span> <span class="va">weight_df_wide</span><span class="op">$</span><span class="va">observer</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt;    index max_diff</span></span>
+<span><span class="co">#&gt; 1      0      0.2</span></span>
+<span><span class="co">#&gt; 2      1      0.8</span></span>
+<span><span class="co">#&gt; 3      2      0.3</span></span>
+<span><span class="co">#&gt; 4      3      0.2</span></span>
+<span><span class="co">#&gt; 5      4      0.5</span></span>
+<span><span class="co">#&gt; 6      5      6.2</span></span>
+<span><span class="co">#&gt; 7      6      0.5</span></span>
+<span><span class="co">#&gt; 8      7      0.4</span></span>
+<span><span class="co">#&gt; 9      8      0.4</span></span>
+<span><span class="co">#&gt; 10     9      0.4</span></span>
+<span><span class="co">#&gt; 11    10      0.9</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="calculate-intra-observer-and-inter-observer-technical-error-of-measurement-tem">Calculate intra-observer and inter-observer technical error of measurement (TEM)<a class="anchor" aria-label="anchor" href="#calculate-intra-observer-and-inter-observer-technical-error-of-measurement-tem"></a>
+</h3>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Inter-observer max difference for weight ----</span></span>
+<span><span class="va">weight_df_wide</span> <span class="op">&lt;-</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span></span>
+<span>  <span class="va">weight_df</span>, </span>
+<span>  names_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">measure_type</span>, <span class="va">measure_round</span><span class="op">)</span>, </span>
+<span>  values_from <span class="op">=</span> <span class="va">measure_value</span>, names_sep <span class="op">=</span> <span class="st">"_"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">inter_tem</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/calculate_tem.html">calculate_tem</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">weight_df_wide</span><span class="op">$</span><span class="va">weight_1</span> <span class="op">-</span> <span class="va">weight_df_wide</span><span class="op">$</span><span class="va">weight_2</span><span class="op">)</span>, </span>
+<span>  n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">weight_df_wide</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>which gives</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt; [1] 0.4507065</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Intra-observer max difference for weight ----</span></span>
+<span><span class="va">weight_df_wide</span> <span class="op">&lt;-</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span></span>
+<span>  <span class="va">weight_df</span>, </span>
+<span>  names_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">measure_type</span>, <span class="va">measure_round</span><span class="op">)</span>, </span>
+<span>  values_from <span class="op">=</span> <span class="va">measure_value</span>, names_sep <span class="op">=</span> <span class="st">"_"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">intra_tem</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/calculate_tem_cohort.html">calculate_tem_cohort</a></span><span class="op">(</span></span>
+<span>  df <span class="op">=</span> <span class="va">weight_df_wide</span>, m1 <span class="op">=</span> <span class="st">"weight_1"</span>, m2 <span class="op">=</span> <span class="st">"weight_2"</span>,</span>
+<span>  index <span class="op">=</span> <span class="st">"observer"</span>, n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">weight_df_wide</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>which gives</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#&gt;    observer        tem</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; 1         0 0.02430862</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; 2         1 0.10180195</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; 3         2 0.03567530</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; 4         3 0.01906925</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; 5         4 0.05090097</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; 6         5 0.41849297</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; 7         6 0.04156047</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; 8         7 0.03089572</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; 9         8 0.03437758</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; 10        9 0.03302891</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 11       10 0.08867715</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="calculating-relative-technical-error-of-measurement">Calculating relative technical error of measurement<a class="anchor" aria-label="anchor" href="#calculating-relative-technical-error-of-measurement"></a>
+</h3>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mean_weight</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/calculate_summary.html">calculate_mean</a></span><span class="op">(</span></span>
+<span>  <span class="va">weight_df</span><span class="op">$</span><span class="va">measure_value</span>, index <span class="op">=</span> <span class="va">weight_df</span><span class="op">$</span><span class="va">observer</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/calculate_relative_tem.html">calculate_relative_tem</a></span><span class="op">(</span><span class="va">intra_tem</span><span class="op">$</span><span class="va">tem</span>, <span class="va">mean_weight</span><span class="op">$</span><span class="va">mean</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] 0.1658725 0.7064674 0.2450227 0.1307905 0.3499551 2.9295973</span></span>
+<span><span class="co">#&gt;  [7] 0.2836892 0.2106766 0.2346593 0.2254533 0.6067543</span></span></code></pre></div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <p>If you find the <a href="https://nutriverse.io/anthrocheckr/">anthrocheckr</a> package useful please cite using the suggested citation provided by a call to the <code><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation()</a></code> function as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"anthrocheckr"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite anthrocheckr in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Ernest Guevarra (2024). _anthrocheckr: An Implementation of Anthropometric</span></span>
-<span><span class="co">#&gt;   Measurement Standardisation Tests_. R package version 0.0.0.9000,</span></span>
+<span><span class="co">#&gt;   Ernest Guevarra (2024). _anthrocheckr: An Implementation of</span></span>
+<span><span class="co">#&gt;   Anthropometric Measurement Standardisation Tests_. R</span></span>
+<span><span class="co">#&gt;   package version 0.0.0.9000,</span></span>
 <span><span class="co">#&gt;   &lt;https://nutriverse.io/anthrocheckr/&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
@@ -173,6 +290,7 @@
 <li><a href="https://github.com/nutriverse/anthrocheckr/actions" class="external-link"><img src="https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg" alt="R build status"></a></li>
 <li><a href="https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main" class="external-link"><img src="https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.codefactor.io/repository/github/nutriverse/anthrocheckr" class="external-link"><img src="https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge" alt="CodeFactor"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/162917178" class="external-link"><img src="https://zenodo.org/badge/162917178.svg" alt="DOI"></a></li>
 </ul>
 </div>
 
