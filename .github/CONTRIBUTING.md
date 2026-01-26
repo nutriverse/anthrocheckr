@@ -2,23 +2,23 @@
 
 ## Bugs
 
-* Submit an issue on the [issues page](https://github.com/repo/issues)
+* Submit an issue on the [issues page](https://github.com/nutriverse/anthrocheckr/issues)
 
 ## Code contributions
 
 * Fork this repository to your Github account
 
-* Clone your version on your account down to your machine from your account 
+* Clone your forked version to your machine with
 
-```
-git clone https://github.com/<yourgithubusername>/rep_name.git
+```bash
+git clone https://github.com/<yourgithubusername>/anthrocheckr.git
 ```
 
-* Make sure to track progress upstream i.e., on our version of `repo_name` 
-at `repo`, by doing 
+* Make sure to track progress upstream i.e., on our version of `anthrocheckr` 
+at `nutriverse/anthrocheckr`, by doing 
 
-```
-git remote add upstream https://github.com/repo.git
+```bash
+git remote add upstream https://github.com/nutriverse/anthrocheckr.git
 ```
 
 * Before making changes make sure to pull changes in from `upstream` by doing 
@@ -32,4 +32,4 @@ documentation
 
 * Push up changes to your account
 
-* Submit a pull request at `repo`
+* Submit a pull request at `nutriverse/anthrocheckr`
