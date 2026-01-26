@@ -3,7 +3,7 @@ title: anthrocheckr
 url: https://nutriverse.io/anthrocheckr/
 
 development:
-  mode: devel
+  mode: release
 
 template:
   bootstrap: 5
