@@ -1,6 +1,4 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests <img src="man/figures/logo.png" width="200" align="right" />
 
 <!-- badges: start -->
@@ -14,7 +12,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![R build
 status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main)
+coverage](https://codecov.io/gh/nutriverse/anthrocheckr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
 [![DOI](https://zenodo.org/badge/162917178.svg)](https://zenodo.org/badge/latestdoi/162917178)
 <!-- badges: end -->
@@ -189,8 +187,8 @@ mean_weight <- calculate_mean(
 )
 
 calculate_relative_tem(intra_tem$tem, mean_weight$mean)
-#>  [1] 0.1658725 0.7064674 0.2450227 0.1307905 0.3499551 2.9295973
-#>  [7] 0.2836892 0.2106766 0.2346593 0.2254533 0.6067543
+#>  [1] 0.1658725 0.7064674 0.2450227 0.1307905 0.3499551 2.9295973 0.2836892
+#>  [8] 0.2106766 0.2346593 0.2254533 0.6067543
 ```
 
 ## Citation
@@ -204,9 +202,8 @@ citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
 #>   Ernest Guevarra (2024). _anthrocheckr: An Implementation of
-#>   Anthropometric Measurement Standardisation Tests_. R
-#>   package version 0.0.0.9000,
-#>   <https://nutriverse.io/anthrocheckr/>.
+#>   Anthropometric Measurement Standardisation Tests_. R package version
+#>   0.0.0.9000, <https://nutriverse.io/anthrocheckr/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -231,3 +228,10 @@ Please note that the `{anthrocheckr}` project is released with a
 [Contributor Code of
 Conduct](https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
+
+ 
+
+[![This is part of the nutriverse project under the Oxford iHealth
+initiative of the MSc in International Health and Tropical Medicine,
+Nuffield Department of Medicine, University of
+Oxford](https://github.com/nutriverse/nutriverse-images/blob/main/nutriverse/nutriverse_footer.png?raw=true)](https://nutriverse.io)

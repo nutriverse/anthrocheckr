@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -11,6 +9,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(anthrocheckr)
 ```
 # anthrocheckr: An Implementation of Anthropometric Measurement Standardisation Tests <img src="man/figures/logo.png" width="200" align="right" />
 
@@ -88,7 +88,7 @@ calculate_max(
 
 ### Calculate intra-observer and inter-observer technical error of measurement (TEM)
 
-```{r calculate-inter-tem, eval = FALSE}
+```{r calculate-inter-tem}
 ## Inter-observer max difference for weight ----
 weight_df_wide <- tidyr::pivot_wider(
   weight_df, 
@@ -112,7 +112,7 @@ calculate_tem(
 ```
 
 
-```{r calculate-intra-tem, eval = FALSE}
+```{r calculate-intra-tem}
 ## Intra-observer max difference for weight ----
 weight_df_wide <- tidyr::pivot_wider(
   weight_df, 
