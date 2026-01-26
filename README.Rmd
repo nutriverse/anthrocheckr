@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![R-CMD-check](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions/workflows/R-CMD-check.yaml)
 [![R build status](https://github.com/nutriverse/anthrocheckr/workflows/test-coverage/badge.svg)](https://github.com/nutriverse/anthrocheckr/actions)
-[![Codecov test coverage](https://codecov.io/gh/nutriverse/anthrocheckr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/nutriverse/anthrocheckr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/anthrocheckr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr/badge)](https://www.codefactor.io/repository/github/nutriverse/anthrocheckr)
 [![DOI](https://zenodo.org/badge/162917178.svg)](https://zenodo.org/badge/latestdoi/162917178)
 <!-- badges: end -->
@@ -53,7 +53,6 @@ install.packages(
   repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
 )
 ```
-
 
 ## Usage
 
@@ -159,3 +158,7 @@ citation("anthrocheckr")
 Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/nutriverse/anthrocheckr/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://nutriverse.io/anthrocheckr/CONTRIBUTING.html).
 
 Please note that the `{anthrocheckr}` project is released with a [Contributor Code of Conduct](https://nutriverse.io/anthrocheckr/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+&nbsp;
+
+[![This is part of the nutriverse project under the Oxford iHealth initiative of the MSc in International Health and Tropical Medicine, Nuffield Department of Medicine, University of Oxford](https://github.com/nutriverse/nutriverse-images/blob/main/nutriverse/nutriverse_footer.png?raw=true)](https://nutriverse.io)
