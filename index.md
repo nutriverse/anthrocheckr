@@ -37,6 +37,7 @@ for:
 [nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
+
 install.packages(
   "anthrocheckr",
   repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
@@ -53,6 +54,7 @@ anthropometric measurement standardisations tests. These can be
 calculated as follows:
 
 ``` r
+
 ## Intra-observer mean for weight ----
 weight_df <- subset(smartStdLong, subset = measure_type == "weight")
 
@@ -72,6 +74,7 @@ calculate_mean(weight_df$measure_value, index = weight_df$observer)
 ```
 
 ``` r
+
 ## Intra-observer sd for weight ----
 calculate_sd(weight_df$measure_value, index = weight_df$observer)
 #>    index       sd
@@ -89,6 +92,7 @@ calculate_sd(weight_df$measure_value, index = weight_df$observer)
 ```
 
 ``` r
+
 ## Intra-observer max difference for weight ----
 weight_df_wide <- tidyr::pivot_wider(
   weight_df, 
@@ -117,6 +121,7 @@ calculate_max(
 ### Calculate intra-observer and inter-observer technical error of measurement (TEM)
 
 ``` r
+
 ## Inter-observer max difference for weight ----
 weight_df_wide <- tidyr::pivot_wider(
   weight_df, 
@@ -137,6 +142,7 @@ which gives
 ```
 
 ``` r
+
 ## Intra-observer max difference for weight ----
 weight_df_wide <- tidyr::pivot_wider(
   weight_df, 
@@ -170,6 +176,7 @@ which gives
 ### Calculating relative technical error of measurement
 
 ``` r
+
 mean_weight <- calculate_mean(
   weight_df$measure_value, index = weight_df$observer
 )
@@ -187,6 +194,7 @@ by a call to the [`citation()`](https://rdrr.io/r/utils/citation.html)
 function as follows:
 
 ``` r
+
 citation("anthrocheckr")
 #> To cite anthrocheckr in publications use:
 #> 
